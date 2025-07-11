@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Dawson Burgess" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>LLM - HHDocs</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -45,6 +45,8 @@
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">LLM</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -52,11 +54,11 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../data.md">Data</a>
+                <li class="toctree-l1"><a class="reference internal" href="../data/">Data</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../n8n.md">n8n</a>
+                <li class="toctree-l1"><a class="reference internal" href="../n8n/">n8n</a>
                 </li>
               </ul>
               <ul>
@@ -98,7 +100,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="getting-started">Getting started</h1>
+<p>This section covers LLM/AI models usage and information documentation. </p>
+<p>Visit the streamlit ui (service that serves agent model through a GUI)to interact with the model here: </p>
+<p><strong>NOTE</strong>: you <em>MUST</em> be on either H&amp;H Secure or the H&amp;H Quality Wifi networks</p>
+<h1 id="components">Components</h1>
+<ul>
+<li>Hardware</li>
+<li>Software (Workstation)</li>
+<li>Definitions</li>
+<li>Usage of Model</li>
+<li>System Architecture</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<p>Ubuntu AI Workstation Specs:
+- OS: 
+- CPU:
+- GPU: 
+- Memory:
+- Storage:</p>
+<h2 id="software-used-in-project">Software Used in Project</h2>
+<p>A list of tools that were used to make this project possible (some will have links with further detail that can be found in sidebar):</p>
+<ul>
+<li>Docker </li>
+<li>Ollama </li>
+<li>Llama3.1:8b </li>
+<li>OpenWebUI</li>
+<li>Pydantic AI </li>
+<li>n8n</li>
+<li>Postgres</li>
+<li>Supabase</li>
+<li>Langfuse</li>
+<li>Streamlit </li>
+<li>FastAPI</li>
+<li>Redis</li>
+<li>Searxng</li>
+<li>Docling </li>
+</ul>
+<h1 id="definitions">Definitions</h1>
+<h1 id="usage">Usage</h1>
+<h2 id="core-principles-for-crafting-effective-prompts">Core Principles for Crafting Effective Prompts</h2>
+<p>Creating effective prompts requires adherence to three fundamental principles: clarity, specificity, and relevance. These principles form the foundation 
+of successful prompt engineering.</p>
+<ul>
+<li><strong>Clarity:</strong> A clear prompt eliminates ambiguity, making sure the AI understands your request. For instance, instead of saying, “Explain this,” specify what “this” refers to and the type of explanation you require. A clear prompt might be, “Explain the concept of renewable energy in simple terms.” Now, that's not to say "explain this won't work, but it has a higher chance of not delivering desired output.</li>
+<li><strong>Specificity:</strong> Narrowing the scope of your request reduces the likelihood of irrelevant or generic responses. For example, instead of asking, “Describe renewable energy,” you could say, “List three advantages of solar energy compared to fossil fuels.”</li>
+<li><strong>Relevance:</strong> Align your prompt with the AI model’s capabilities (this is touched on in the usage section). Understanding the strengths and limitations of the system is crucial for crafting prompts that yield meaningful results. </li>
+</ul>
+<p>By applying these principles, you can create prompts that are actionable and precise, leading to more effective and reliable outputs.</p>
+<h1 id="architecture">Architecture</h1>
+<p>This agent/system has a few different parts that make up a large portion of its funcionality:</p>
+<ul>
+<li>Master Agent  </li>
+<li>General Rag Agent</li>
+<li>Press20 Data Agent</li>
+<li>Calculator Agent </li>
+<li>Websearch Agent </li>
+</ul>
               
             </div>
           </div><footer>
