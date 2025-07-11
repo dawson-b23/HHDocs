@@ -12,3 +12,5 @@ nav:
   - Rpi: rpi.md
   - About: about.md
 theme: readthedocs
+site_description: Documentation for all projects worked on by Intern (Dawson) for H&H Molds Inc.
+site_author: Dawson Burgess
