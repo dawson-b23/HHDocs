@@ -1,0 +1,8 @@
+# docs/_config.yml
+title: HH Documentation
+description: Documentation for the HH Project
+theme: jekyll-theme-minimal
+baseurl: "/HHDocs"
+url: "https://dawson-b23.github.io"
+include:
+  - assets

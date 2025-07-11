@@ -1,0 +1,14 @@
+site_name: HHDocs
+nav:
+  - Home: index.md
+  ## LLM components
+  - LLM: llm.md
+  - Supabase: supabase.md
+  - Data: data.md
+  - n8n: n8n.md
+  - Pydantic: pydantic.md
+  ## Other relevant componenets
+  - Camera: camera.md
+  - Rpi: rpi.md
+  - About: about.md
+theme: readthedocs
