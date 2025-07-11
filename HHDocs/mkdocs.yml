@@ -10,6 +10,7 @@ nav:
   ## Other relevant componenets
   - Camera: camera.md
   - Rpi: rpi.md
+  - UV: uv.md
   - About: about.md
 theme: readthedocs
 site_description: Documentation for all projects worked on by Intern (Dawson) for H&H Molds Inc.
