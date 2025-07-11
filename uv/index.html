@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Dawson Burgess" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>n8n - HHDocs</title>
+    <title>UV - HHDocs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "n8n";
-        var mkdocs_page_input_path = "n8n.md";
+        var mkdocs_page_name = "UV";
+        var mkdocs_page_input_path = "uv.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -55,10 +55,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../data/">Data</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">n8n</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../n8n/">n8n</a>
                 </li>
               </ul>
               <ul>
@@ -73,8 +71,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../rpi/">Rpi</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../uv/">UV</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">UV</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -95,7 +95,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">n8n</li>
+      <li class="breadcrumb-item active">UV</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,22 +105,38 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the n8n docs</p>
+<p>Welcome to the UV docs</p>
 <h1 id="components">Components</h1>
 <ul>
-<li>General</li>
+<li>General </li>
 <li>Usage </li>
-<li>Workflows</li>
+<li>UV Docs</li>
 </ul>
 <h1 id="general">General</h1>
+<h2 id="installation">Installation</h2>
+<p>macOS and Linux</p>
+<pre><code class="language-bash">  curl -LsSf https://astral.sh/uv/install.sh | sh
+</code></pre>
+<p>Windows</p>
+<pre><code class="language-bash">  powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+</code></pre>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>uv init [project name]</code> - Create a new project. If you include a name, it will create a new dir. 
+Otherwise, it will use the current working dir.</li>
+<li><code>uv add [package name]</code> - Start the live-reloading docs server.</li>
+<li><code>uv run [name]</code> - Build the documentation site.</li>
+<li><code>uv sync</code> - Print help message and exit.</li>
+</ul>
 <h1 id="usage">Usage</h1>
-<h1 id="workflows">Workflows</h1>
+<h1 id="uv-docs">UV Docs</h1>
+<p>Link: [https://docs.astral.sh/uv/]</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../data/" class="btn btn-neutral float-left" title="Data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../pydantic/" class="btn btn-neutral float-right" title="Pydantic">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../rpi/" class="btn btn-neutral float-left" title="Rpi"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -143,10 +159,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../data/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../rpi/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../pydantic/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
