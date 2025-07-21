@@ -1,4 +1,8 @@
-# Welcome to MkDocs
+# Welcome to MkDocs for the H&H Local AI Project 
+
+These docs contain all needed information for usage, changes, and operating the Local LLM for H&H Molds. 
+
+Link to [LLM Usage and Docs](https://dawson-b23.github.io/HHDocs/llm/)
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
