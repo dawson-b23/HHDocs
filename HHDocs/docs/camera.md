@@ -7,7 +7,9 @@ Welcome to the camera docs
 - Basler Camera 
 
 # Usage  
+
 ## Keyence VS Camera 
+
 ### Getting Started 
 
 ### Stopbox Compact Program 
@@ -22,6 +24,9 @@ Welcome to the camera docs
 ### Scripts 
 
 ## Basler Camera
+The first camera I used in this project was a *placeholder* basler camera, here is 
+a link to see it yourself [www.link.com]. 
+
 ### Getting Started
 
 
