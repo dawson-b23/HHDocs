@@ -120,8 +120,23 @@
 <h1 id="usage">Usage</h1>
 <p>To use this software, first make sure you are logged into the company network via - H&amp;H Secure, H&amp;H Quality, or directly hard-wired into the network.</p>
 <h2 id="logging-in">Logging in</h2>
-<p>To log in, </p>
-<h2 id="_1"></h2>
+<p>To use the system, please visit [http://10.0.0.21:8501] on any device with a web browser. You will be greated with the log in screen. </p>
+<p>To log in, you will need to:
+1. Make an account (You will only need to do this once)
+  - Select the Sign up option from the 'Action' dropdown
+  - Log in with work email, and set a password. You wont recieve any emails, this is simply for logs and usage.</p>
+<ol>
+<li>Sign in </li>
+<li>Select the 'Login' option from the 'Action' dropdown</li>
+<li>Log in with user credentials</li>
+</ol>
+<h2 id="main-system-page">Main System Page</h2>
+<p>Here you can 
+1. See Currently opened chat 
+2. Name current chat 
+3. create new chat or load another chat session 
+4. click the link to the docs 
+5. If you have any issues, please let dawson know with you session_id and chat.</p>
 <h2 id="core-principles-for-crafting-effective-prompts">Core Principles for Crafting Effective Prompts</h2>
 <p>Creating effective prompts requires adherence to three fundamental principles: clarity, specificity, and relevance. These principles form the foundation 
 of successful prompt engineering.</p>
@@ -134,8 +149,12 @@ of successful prompt engineering.</p>
 <h2 id="how-to-promptways-you-can-prompt">How to Prompt/Ways You can prompt</h2>
 <p>Prompts will fall into one of these categories:</p>
 <ol>
-<li>General Questions about process, company documents, etc </li>
-<li>These are queries about internal documents, processes, or general knowledge stored in the system's knowledge base (e.g., "Summarize the scope meeting" or "What is the company policy on safety?"). </li>
+<li>
+<p>General Questions about process, company documents, etc </p>
+</li>
+<li>
+<p>These are queries about internal documents, processes, or general knowledge stored in the system's knowledge base (e.g., "Summarize the scope meeting" or "What is the company policy on safety?"). </p>
+</li>
 <li>The system uses Retrieval-Augmented Generation (RAG) to search and summarize relevant documents. </li>
 <li>
 <p>No special prefix is needed—just ask naturally. </p>
@@ -143,7 +162,9 @@ of successful prompt engineering.</p>
 <li>
 <p>Question About Specific Shots/data points related to Press data </p>
 </li>
-<li>This can be questions about bottom/top/overall in or out of spec parts (pass/fail) based on shot number, e.g., "How many failed shots in press20_data?" or "What is the average ActNozzleTemp over shot_num 100 to 200 in press20_data?"</li>
+<li>
+<p>This can be questions about bottom/top/overall in or out of spec parts (pass/fail) based on shot number, e.g., "How many failed shots in press20_data?" or "What is the average ActNozzleTemp over shot_num 100 to 200 in press20_data?"</p>
+</li>
 <li>Questions about specific machine data points, e.g., "List ActCycleTime for shot_num 50 in press20_data."</li>
 <li>
 <p><strong>Prefix Required:</strong> Start your query with "press20_data" (e.g., "press20_data how many failed shots?"). The system will strip the prefix and route to the Press20 Data Agent, which converts natural language to SQL and queries the database.</p>
@@ -152,28 +173,36 @@ of successful prompt engineering.</p>
 <p>Questions about tweaks, changes to process, or defects and how to combat them </p>
 </li>
 <li>
-<p>This can be something like, "I am seeing a lot of (certain defect), what machine settings can I adjust to change this" or "What is the definition of (insert defect)?" or "What are the common causes of (insert defect)?"
-    These are routed to the Analysis Agent for trends or defect suggestions. No special prefix needed—keywords like "defect," "fix," or "tweak" trigger it.</p>
+<p>This can be something like, "I am seeing a lot of (certain defect), what machine settings can I adjust to change this" or "What is the definition of (insert defect)?" or "What are the common causes of (insert defect)?"</p>
+</li>
+<li>
+<p>These are routed to the Analysis Agent for trends or defect suggestions. No special prefix needed—keywords like "defect," "fix," or "tweak" trigger it.</p>
 </li>
 <li>
 <p>Calculations</p>
 </li>
-<li>Simple numerical queries, e.g., "What is 2 + 2?" or "Calculate 5 * (3 + 4)."</li>
+<li>
+<p>Simple numerical queries, e.g., "What is 2 + 2?" or "Calculate 5 * (3 + 4)."</p>
+</li>
 <li>
 <p>Routed to the Calculator Agent automatically if operators (+, -, *, /) are detected. No prefix needed.</p>
 </li>
 <li>
 <p>Web Searches</p>
 </li>
-<li>External searches, e.g., "websearch. latest injection molding techniques."</li>
+<li>
+<p>External searches, e.g., "websearch. latest injection molding techniques."</p>
+</li>
 <li><strong>Prefix Required:</strong> Start with "websearch." The system strips the prefix, searches using DuckDuckGo, crawls top results, filters content, and summarizes in markdown.</li>
 <li>This Agent will act as a placeholder for missing knowledge the system may not have. Early on, it will be one of the more useful tools until we have a more tuned dataset for the model.</li>
 </ol>
-<p><strong>Tips for all Prompts</strong>
-- Be direct and use natural language.
-- For history-aware queries, the system remembers previous messages in the conversation.
-- If unsure, start with "what can you do" for capabilities.
-- Sometimes, you will need to ask the same question twice if you get a weird answer, I am still working on this.</p>
+<p><strong>Tips for all Prompts</strong></p>
+<ul>
+<li>Be direct and use natural language.</li>
+<li>For history-aware queries, the system remembers previous messages in the conversation.</li>
+<li>If unsure, start with "what can you do" for capabilities.</li>
+<li>Sometimes, you will need to ask the same question twice if you get a weird answer, I am still working on this.</li>
+</ul>
 <h2 id="hardware">Hardware</h2>
 <p>Ubuntu AI Workstation Specs:
 - OS: 
@@ -222,37 +251,42 @@ of successful prompt engineering.</p>
 </ul>
 <h2 id="master-agent">Master Agent</h2>
 <p>The Master Agent is the central orchestrator. It receives all user queries and routes them to the appropriate specialized agent based on keywords or patterns:</p>
-<pre><code>Checks for predefined commands like "who are you," "what can you do," or "help" and responds directly.
-Routes prefixed queries (e.g., "websearch." or "press20_data").
-Uses chain-of-thought internally to verify routing.
-Ensures outputs are always in markdown format.
-</code></pre>
+<ul>
+<li>Checks for predefined commands like "who are you," "what can you do," or "help" and responds directly.</li>
+<li>Routes prefixed queries (e.g., "websearch." or "press20_data").</li>
+<li>Uses chain-of-thought internally to verify routing.</li>
+<li>Ensures outputs are always in markdown format.</li>
+</ul>
 <h2 id="general-rag-agent">General RAG Agent</h2>
 <p>The Press20 Data Agent queries the press20_data table for machine/shot data:</p>
-<pre><code>Activated by queries starting with "press20_data" (prefix stripped).
-Uses SQL Agent to convert natural language to SQL (e.g., "how many failed shots" → SELECT COUNT(*) FROM press20_data WHERE overallPassFail = 'FAIL').
-Executes SQL and formats results as markdown bullets (e.g., - shot_num: 123\n- overallPassFail: FAIL).
-Handles errors like no data with markdown messages.
-</code></pre>
+<ul>
+<li>Activated by queries starting with "press20_data" (prefix stripped).</li>
+<li>Uses SQL Agent to convert natural language to SQL (e.g., "how many failed shots" → SELECT COUNT(*) FROM press20_data WHERE overallPassFail = 'FAIL').</li>
+<li>Executes SQL and formats results as markdown bullets (e.g., - shot_num: 123\n- overallPassFail: FAIL).</li>
+<li>Handles errors like no data with markdown messages.</li>
+</ul>
 <h2 id="press20-data-agent">Press20 Data Agent</h2>
 <p>The Press20 Data Agent queries the press20_data table for machine/shot data:</p>
-<pre><code>Activated by queries starting with "press20_data" (prefix stripped).
-Uses SQL Agent to convert natural language to SQL (e.g., "how many failed shots" → SELECT COUNT(*) FROM press20_data WHERE overallPassFail = 'FAIL').
-Executes SQL and formats results as markdown bullets (e.g., - shot_num: 123\n- overallPassFail: FAIL).
-Handles errors like no data with markdown messages.
-</code></pre>
+<ul>
+<li>Activated by queries starting with "press20_data" (prefix stripped).</li>
+<li>Uses SQL Agent to convert natural language to SQL (e.g., "how many failed shots" → SELECT COUNT(*) FROM press20_data WHERE overallPassFail = 'FAIL').</li>
+<li>Executes SQL and formats results as markdown bullets (e.g., - shot_num: 123\n- overallPassFail: FAIL).</li>
+<li>Handles errors like no data with markdown messages.</li>
+</ul>
 <h2 id="calculator-agent">Calculator Agent</h2>
 <p>The Calculator Agent performs numerical computations:</p>
-<pre><code>Detects operators (+, -, *, /) in queries.
-Executes calculations and returns simple markdown results (e.g., Result: 4).
-No prefix needed.
-</code></pre>
+<ul>
+<li>Detects operators (+, -, *, /) in queries.</li>
+<li>Executes calculations and returns simple markdown results (e.g., Result: 4).</li>
+<li>No prefix needed.</li>
+</ul>
 <h2 id="websearch-agent">Websearch Agent</h2>
 <p>The Websearch Agent fetches external information:</p>
-<pre><code>Activated by queries starting with "websearch." (prefix stripped).
-Searches using DuckDuckGo, crawls top results with Crawl4AI, filters content via LLM.
-Returns summarized markdown from pages (e.g., - From url.com: Summary text).
-</code></pre>
+<ul>
+<li>Activated by queries starting with "websearch." (prefix stripped).</li>
+<li>Searches using DuckDuckGo, crawls top results with Crawl4AI, filters content via LLM.</li>
+<li>Returns summarized markdown from pages (e.g., - From url.com: Summary text).</li>
+</ul>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <h2 id="common-errors">Common Errors</h2>
 <p><strong>Error 404 - No Response</strong>
