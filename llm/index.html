@@ -123,12 +123,14 @@
 <p>To use the system, please visit [http://10.0.0.21:8501] on any device with a web browser. You will be greated with the log in screen. </p>
 <p>To log in, you will need to:
 1. Make an account (You will only need to do this once)
-  - Select the Sign up option from the 'Action' dropdown
-  - Log in with work email, and set a password. You wont recieve any emails, this is simply for logs and usage.</p>
+    - Select the Sign up option from the 'Action' dropdown
+    - Log in with work email, and set a password. You wont recieve any emails, this is simply for logs and usage.</p>
 <ol>
-<li>Sign in </li>
+<li>Sign in <ul>
 <li>Select the 'Login' option from the 'Action' dropdown</li>
 <li>Log in with user credentials</li>
+</ul>
+</li>
 </ol>
 <h2 id="main-system-page">Main System Page</h2>
 <p>Here you can 
@@ -151,50 +153,42 @@ of successful prompt engineering.</p>
 <ol>
 <li>
 <p>General Questions about process, company documents, etc </p>
-</li>
-<li>
-<p>These are queries about internal documents, processes, or general knowledge stored in the system's knowledge base (e.g., "Summarize the scope meeting" or "What is the company policy on safety?"). </p>
-</li>
+<ul>
+<li>These are queries about internal documents, processes, or general knowledge stored in the system's knowledge base (e.g., "Summarize the scope meeting" or "What is the company policy on safety?"). </li>
 <li>The system uses Retrieval-Augmented Generation (RAG) to search and summarize relevant documents. </li>
-<li>
-<p>No special prefix is needed—just ask naturally. </p>
+<li>No special prefix is needed—just ask naturally. </li>
+</ul>
 </li>
 <li>
 <p>Question About Specific Shots/data points related to Press data </p>
-</li>
-<li>
-<p>This can be questions about bottom/top/overall in or out of spec parts (pass/fail) based on shot number, e.g., "How many failed shots in press20_data?" or "What is the average ActNozzleTemp over shot_num 100 to 200 in press20_data?"</p>
-</li>
+<ul>
+<li>This can be questions about bottom/top/overall in or out of spec parts (pass/fail) based on shot number, e.g., "How many failed shots in press20_data?" or "What is the average ActNozzleTemp over shot_num 100 to 200 in press20_data?"</li>
 <li>Questions about specific machine data points, e.g., "List ActCycleTime for shot_num 50 in press20_data."</li>
-<li>
-<p><strong>Prefix Required:</strong> Start your query with "press20_data" (e.g., "press20_data how many failed shots?"). The system will strip the prefix and route to the Press20 Data Agent, which converts natural language to SQL and queries the database.</p>
+<li><strong>Prefix Required:</strong> Start your query with "press20_data" (e.g., "press20_data how many failed shots?"). The system will strip the prefix and route to the Press20 Data Agent, which converts natural language to SQL and queries the database.</li>
+</ul>
 </li>
 <li>
 <p>Questions about tweaks, changes to process, or defects and how to combat them </p>
-</li>
-<li>
-<p>This can be something like, "I am seeing a lot of (certain defect), what machine settings can I adjust to change this" or "What is the definition of (insert defect)?" or "What are the common causes of (insert defect)?"</p>
-</li>
-<li>
-<p>These are routed to the Analysis Agent for trends or defect suggestions. No special prefix needed—keywords like "defect," "fix," or "tweak" trigger it.</p>
+<ul>
+<li>This can be something like, "I am seeing a lot of (certain defect), what machine settings can I adjust to change this" or "What is the definition of (insert defect)?" or "What are the common causes of (insert defect)?"</li>
+<li>These are routed to the Analysis Agent for trends or defect suggestions. No special prefix needed—keywords like "defect," "fix," or "tweak" trigger it.</li>
+</ul>
 </li>
 <li>
 <p>Calculations</p>
-</li>
-<li>
-<p>Simple numerical queries, e.g., "What is 2 + 2?" or "Calculate 5 * (3 + 4)."</p>
-</li>
-<li>
-<p>Routed to the Calculator Agent automatically if operators (+, -, *, /) are detected. No prefix needed.</p>
+<ul>
+<li>Simple numerical queries, e.g., "What is 2 + 2?" or "Calculate 5 * (3 + 4)."</li>
+<li>Routed to the Calculator Agent automatically if operators (+, -, *, /) are detected. No prefix needed.</li>
+</ul>
 </li>
 <li>
 <p>Web Searches</p>
-</li>
-<li>
-<p>External searches, e.g., "websearch. latest injection molding techniques."</p>
-</li>
+<ul>
+<li>External searches, e.g., "websearch. latest injection molding techniques."</li>
 <li><strong>Prefix Required:</strong> Start with "websearch." The system strips the prefix, searches using DuckDuckGo, crawls top results, filters content, and summarizes in markdown.</li>
 <li>This Agent will act as a placeholder for missing knowledge the system may not have. Early on, it will be one of the more useful tools until we have a more tuned dataset for the model.</li>
+</ul>
+</li>
 </ol>
 <p><strong>Tips for all Prompts</strong></p>
 <ul>
