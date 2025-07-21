@@ -21,7 +21,7 @@ To use this software, first make sure you are logged into the company network vi
 
 ## Logging in
 
-To use the system, please visit [http://10.0.0.21:8501] on any device with a web browser. You will be greated with the log in screen. 
+To use the system, please visit [H&H AI Assistant](http://10.0.0.21:8501) on any device with a web browser. You will be greated with the log in screen. 
 
 To log in, you will need to:
 1. Make an account (You will only need to do this once)
