@@ -1,12 +1,12 @@
 # Getting Started
 Welcome to the camera docs
 
-# Components
+## Components
 - Keyence VS Camera 
 - Keyence Camera Scripts 
 - Basler Camera 
 
-# Usage  
+## Usage  
 
 ## Keyence VS Camera 
 

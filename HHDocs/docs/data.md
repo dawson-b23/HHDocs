@@ -1,5 +1,5 @@
 # Getting Started
-Welcome to the camera docs
+Welcome to the data docs
 
 # Components
 - Usage

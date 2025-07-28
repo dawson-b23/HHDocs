@@ -35,13 +35,15 @@ This documentation covers access, authentication, and detailed usage. It assumes
 ## Accessing the Application
 
 1. **Open in Browser**:
-   - Go to [http://10.0.0.21:8501] 
-   - The page title is "H&H AI Assistant" with a robot icon (🤖).
-   - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).
+
+ - Go to [http://10.0.0.21:8501] 
+ - The page title is "H&H AI Assistant" with a robot icon (🤖).
+ - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).
 
 2. **Troubleshooting Access**:
-   - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
-   - Browser Cache: Clear cache or try incognito mode if UI issues occur.
+
+ - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
+ - Browser Cache: Clear cache or try incognito mode if UI issues occur.
 
 ## Signup and Login
 
@@ -88,14 +90,17 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 
 - **Header**: "H&H AI Assistant" with logo and logged-in email.
 - **Mode Selector**: Choose the query mode (dropdown: "general", "press_data", "websearch").
+
   - General: For document-based queries (e.g., "Summarize the models.py file").
   - Press Data: For machine data queries (e.g., "Average ActNozzleTemp for shots 100-200").
   - Websearch: For internet-related queries (e.g., "Latest trends in injection molding").
+
 - **Show COT Toggle**: Checkbox to display Chain-of-Thought (COT) reasoning in responses (default: enabled). COT shows the agent's internal thinking process. This sometimes disconnects with tool calls/agent mode.
 - **Conversation Selector**: Dropdown to switch between chat sessions. Each shows title, ID, and timestamp (e.g., "New Chat (ID: uuid) - 2025-07-28T12:00:00").
 - **New Chat Button**: Starts a new session with a unique ID. Switches to it automatically.
 - **Rename Current Chat**: Text input to rename the active session (e.g., from "New Chat" to "Molding Trends"). Click "Rename" to save.
 - **Help Section**:
+
   - "Ask about docs, press20 data, calculations, trends, defects."
   - Link to Docs: [https://dawson-b23.github.io/HHDocs/](https://dawson-b23.github.io/HHDocs/)
   - Contact: intern@hhmoldsinc.com | 832-977-3004
@@ -106,9 +111,11 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 - **Chat History**: Displays previous messages.
 - User messages: In blue bubbles (e.g., your query).
 - Assistant responses: In gray bubbles, showing:
+
   - **Agent Mode**: e.g., "General" or "Press Data". There is a bug where sometimes this will be "Unknown"
   - **COT** (if enabled): The agent's reasoning (e.g., "Thinking: [steps]").
   - **Model Response**: The final answer.
+
 - **Input Field**: At the bottom—"Your question..." placeholder. Type your query and press Enter.
 - Queries are processed based on the selected mode.
 - First query in a "New Chat" auto-renames the session to a truncated version of the query (e.g., "how many failed shots..." becomes "how many failed shots"). You can rename this chat if needed.
@@ -122,27 +129,34 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 In this mode, you can ask general questions with a few having specific formats. It will answer based on whats in the knowledge base, if there is a gap, you can use a websearch. 
 You can ask "what is a [insert defect]," "what are causes of [insert defect]," and "how to troubleshoot/fix [insert defect]." Talk to this normally like you would any chatbot.
 
-- Special Examples:
-- "List all documents": Lists titles, IDs, schemas.
+- Examples:
+
+  - "List all documents": Lists titles, IDs, schemas.
+  - "What is splay"
+  - "What are the causes of splay"
+  - "How to fix splay" or "fix splay" or any variation of this.
 
 - Responses use RAG: Searches ChromaDB, formats context, and generates answers.
 
 #### Press Data Mode
 - For analyzing `press20_data` table (machine timestamps, temperatures, pressures, etc.).
 - Natural language to SQL: e.g., "How many failed shots" → SQL like `SELECT COUNT(shot_num) FROM press20_data WHERE overallpassfail = 'FAIL'`.
+
 - Examples:
-- "Average actnozzletemp over shot_num 100 to 200".
-- "Number of FAIL shots" (can specify for overallpassfail, bottompassfail, toppassfail for stopbox compacts)
-- "Shots with bottomanomalylevel greater than 0.5".
-- Outputs formatted data (e.g., key-value pairs per row).
+
+  - "Average actnozzletemp over shot_num 100 to 200".
+  - "Number of FAIL shots" (can specify for overallpassfail, bottompassfail, toppassfail for stopbox compacts)
+  - "Shots with bottomanomalylevel greater than 0.5".
+  - Outputs formatted data (e.g., key-value pairs per row).
 
 #### Websearch Mode
 - For external knowledge. Use this like a regular search engine. It will take the top 5 results, then scrape, aggreagte, and summarize the pages.
 - Searches web, crawls pages, filters/summarizes content.
 
 - Examples:
-- "Defect fixes for injection molding".
-- Outputs: Aggregated summaries from top results.
+
+  - "Defect fixes for injection molding".
+  - Outputs: Aggregated summaries from top results.
 
 ### Chat History and Sessions
 
