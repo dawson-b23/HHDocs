@@ -2,7 +2,8 @@ site_name: HHDocs
 nav:
   - Home: index.md
   ## LLM components
-  - LLM: llm.md
+  - LLM-usage: llm-usage.md
+  - LLM-architecture: llm-arch.md
   - Supabase: supabase.md
   - Data: data.md
   - n8n: n8n.md

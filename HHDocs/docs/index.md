@@ -2,7 +2,7 @@
 
 These docs contain all needed information for usage, changes, and operating the Local LLM for H&H Molds. 
 
-Link to [LLM Usage and Docs](https://dawson-b23.github.io/HHDocs/llm/)
+Link to [LLM Usage and Docs](https://dawson-b23.github.io/HHDocs/llm-usage/)
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
