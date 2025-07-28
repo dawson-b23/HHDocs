@@ -5,6 +5,7 @@
 **NOTE**: you *MUST* be on either H&H Secure or the H&H Quality Wifi networks
 
 The H&H AI Assistant is a web-based application built with Streamlit and Pydantic, designed to assist with injection molding queries. It supports multiple modes for handling different types of questions:
+
 - **General Mode**: Uses Retrieval-Augmented Generation (RAG) to query and summarize documents, including listing documents, fetching file contents, and running SQL queries on tabular data.
 - **Press Data Mode**: Queries the `press20_data` table using natural language to SQL conversion, allowing analysis of machine data like shot numbers, temperatures, pressures, and pass/fail statuses.
 - **Websearch Mode**: Performs web searches, crawls pages, and summarizes content relevant to the query.
@@ -34,14 +35,13 @@ This documentation covers access, authentication, and detailed usage. It assumes
 ## Accessing the Application
 
 1. **Open in Browser**:
- - Go to [http://10.0.0.21:8501] 
- - The page title is "H&H AI Assistant" with a robot icon (🤖).
- - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs: `docker compose logs -f app` for errors (e.g., connection issues to Supabase or Ollama).
+   - Go to [http://10.0.0.21:8501] 
+   - The page title is "H&H AI Assistant" with a robot icon (🤖).
+   - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).
 
 2. **Troubleshooting Access**:
- - Firewall: Ensure port 8501 is open.
- - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
- - Browser Cache: Clear cache or try incognito mode if UI issues occur.
+   - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
+   - Browser Cache: Clear cache or try incognito mode if UI issues occur.
 
 ## Signup and Login
 
@@ -50,13 +50,13 @@ The app uses Supabase for authentication (enabled when `DEPLOY = True` in `app.p
 ### Signup
 
 1. On the login screen (displayed if not authenticated), select "Sign Up" from the "Action" dropdown.
-2. Enter a valid email address (e.g., `user@example.com`). Don't worry you will never recieve spam or emails, this is just for user authentication.
+2. Enter a valid email address (e.g., `user@example.com`). Don't worry you will never recieve spam or emails, this is just for user authentication. You can use work email or personal.
 3. Enter a password (at least 6 characters; Supabase enforces basic rules).
 4. Click "Register".
 5. If successful, you'll see "Registered! Log in." 
 6. Troubleshooting:
- - Error like "Sign-up failed": Check email/password format or Supabase logs (`docker compose logs -f supabase`).
- - Duplicate email: Use a unique email.
+   - Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs 
+   - Duplicate email: Use a unique email.
 
 ### Login
 
@@ -66,8 +66,8 @@ The app uses Supabase for authentication (enabled when `DEPLOY = True` in `app.p
 4. If successful, you'll see "Welcome back, [email]!" and be redirected to the main app interface.
 5. The sidebar will show "Logged in as: [email]" and the H&H logo.
 6. Troubleshooting:
- - "Login failed": Verify credentials or reset password via Supabase dashboard if needed.
- - Session persistence: The app uses Streamlit session state; closing the browser logs you out—re-login required.
+   - "Login failed": Verify credentials or reset password via Supabase dashboard if needed.
+   - Session persistence: The app uses Streamlit session state; closing the browser logs you out—re-login required.
 
 ### Logout
 
@@ -96,9 +96,9 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 - **New Chat Button**: Starts a new session with a unique ID. Switches to it automatically.
 - **Rename Current Chat**: Text input to rename the active session (e.g., from "New Chat" to "Molding Trends"). Click "Rename" to save.
 - **Help Section**:
-- "Ask about docs, press20 data, calculations, trends, defects."
-- Link to Docs: [https://dawson-b23.github.io/HHDocs/](https://dawson-b23.github.io/HHDocs/)
-- Contact: intern@hhmoldsinc.com | 832-977-3004
+  - "Ask about docs, press20 data, calculations, trends, defects."
+  - Link to Docs: [https://dawson-b23.github.io/HHDocs/](https://dawson-b23.github.io/HHDocs/)
+  - Contact: intern@hhmoldsinc.com | 832-977-3004
 
 ### Main Chat Interface
 
