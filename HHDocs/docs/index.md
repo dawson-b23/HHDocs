@@ -6,16 +6,11 @@ Link to [LLM Usage and Docs](https://dawson-b23.github.io/HHDocs/llm-usage/)
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## Links
+You can also navigate to anything on this site via the sidebar, but here are the links - 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- Link to [LLM Usage](https://dawson-b23.github.io/HHDocs/llm-usage/)
+- Link to [LLM Architecture](https://dawson-b23.github.io/HHDocs/llm-arch/)
+- Link to [UV Usage Docs](https://dawson-b23.github.io/HHDocs/uv/)
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
