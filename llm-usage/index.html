@@ -153,10 +153,12 @@
                 <h1 id="hh-ai-assistant-usage-documentation">H&amp;H AI Assistant Usage Documentation</h1>
 <h2 id="introduction">Introduction</h2>
 <p><strong>NOTE</strong>: you <em>MUST</em> be on either H&amp;H Secure or the H&amp;H Quality Wifi networks</p>
-<p>The H&amp;H AI Assistant is a web-based application built with Streamlit and Pydantic, designed to assist with injection molding queries. It supports multiple modes for handling different types of questions:
-- <strong>General Mode</strong>: Uses Retrieval-Augmented Generation (RAG) to query and summarize documents, including listing documents, fetching file contents, and running SQL queries on tabular data.
-- <strong>Press Data Mode</strong>: Queries the <code>press20_data</code> table using natural language to SQL conversion, allowing analysis of machine data like shot numbers, temperatures, pressures, and pass/fail statuses.
-- <strong>Websearch Mode</strong>: Performs web searches, crawls pages, and summarizes content relevant to the query.</p>
+<p>The H&amp;H AI Assistant is a web-based application built with Streamlit and Pydantic, designed to assist with injection molding queries. It supports multiple modes for handling different types of questions:</p>
+<ul>
+<li><strong>General Mode</strong>: Uses Retrieval-Augmented Generation (RAG) to query and summarize documents, including listing documents, fetching file contents, and running SQL queries on tabular data.</li>
+<li><strong>Press Data Mode</strong>: Queries the <code>press20_data</code> table using natural language to SQL conversion, allowing analysis of machine data like shot numbers, temperatures, pressures, and pass/fail statuses.</li>
+<li><strong>Websearch Mode</strong>: Performs web searches, crawls pages, and summarizes content relevant to the query.</li>
+</ul>
 <p>The app integrates with services like Supabase for authentication and data storage, ChromaDB for vector search, Ollama for local LLM inference, and Langfuse for observability. It runs in a Dockerized environment for persistence and ease of deployment.</p>
 <p>This documentation covers access, authentication, and detailed usage. It assumes the application is deployed via Docker Compose as described in previous instructions.</p>
 <h2 id="definitions">Definitions</h2>
@@ -174,12 +176,11 @@
 <li>Go to [http://10.0.0.21:8501] </li>
 <li>The page title is "H&amp;H AI Assistant" with a robot icon (🤖).</li>
 <li>
-<p>If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs: <code>docker compose logs -f app</code> for errors (e.g., connection issues to Supabase or Ollama).</p>
+<p>If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).</p>
 </li>
 <li>
 <p><strong>Troubleshooting Access</strong>:</p>
 </li>
-<li>Firewall: Ensure port 8501 is open.</li>
 <li>Network: Make sure you are either connected to H&amp;H Secure, or H&amp;H Quality Wifi networks (or hardwired in to ethernet).</li>
 <li>Browser Cache: Clear cache or try incognito mode if UI issues occur.</li>
 </ol>
@@ -188,12 +189,12 @@
 <h3 id="signup">Signup</h3>
 <ol>
 <li>On the login screen (displayed if not authenticated), select "Sign Up" from the "Action" dropdown.</li>
-<li>Enter a valid email address (e.g., <code>user@example.com</code>). Don't worry you will never recieve spam or emails, this is just for user authentication.</li>
+<li>Enter a valid email address (e.g., <code>user@example.com</code>). Don't worry you will never recieve spam or emails, this is just for user authentication. You can use work email or personal.</li>
 <li>Enter a password (at least 6 characters; Supabase enforces basic rules).</li>
 <li>Click "Register".</li>
 <li>If successful, you'll see "Registered! Log in." </li>
 <li>Troubleshooting:</li>
-<li>Error like "Sign-up failed": Check email/password format or Supabase logs (<code>docker compose logs -f supabase</code>).</li>
+<li>Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs </li>
 <li>Duplicate email: Use a unique email.</li>
 </ol>
 <h3 id="login">Login</h3>
