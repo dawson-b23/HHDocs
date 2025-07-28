@@ -78,6 +78,80 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">UV</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#components">Components</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#general">General</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#use-curl-to-download-and-install">Use curl to download and install:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#alternatively-with-wget">Alternatively, with wget:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#windows-standalone-installer">Windows (Standalone Installer)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#homebrew-macos">Homebrew (macOS)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#winget-windows">WinGet (Windows)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scoop-windows">Scoop (Windows)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pypi-all-platforms-recommended-with-pipx">PyPI (All Platforms, Recommended with pipx)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cargo-all-platforms">Cargo (All Platforms)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-all-platforms">Docker (All Platforms)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#core-concepts">Core Concepts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#projects">Projects</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#virtual-environments">Virtual Environments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commands-overview">Commands Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-project">Create a Project:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#add-dependencies">Add Dependencies:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#run-code-create-mainpy">Run Code: Create main.py:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#run">Run:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#or-directly-preferred-method">Or directly (preferred method):</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sync-environment">Sync Environment:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lock-dependencies">Lock Dependencies:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#managing-scripts">Managing Scripts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inline-metadata-add-to-scriptpy">Inline Metadata: Add to script.py:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lock-script">Lock Script:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shebang-for-executables">Shebang for Executables:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-usage-examples">Advanced Usage Examples</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cli-reference">CLI Reference</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -109,32 +183,447 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="getting-started">Getting Started</h1>
-<p>Welcome to the UV docs</p>
-<h1 id="components">Components</h1>
+<p>Welcome to the UV docs. UV is an extremely fast Python package and project manager developed by Astral. It serves as a drop-in replacement for common tools like pip, virtualenv, and pip-tools, with features for managing projects, dependencies, virtual environments, and more. UV emphasizes speed, reproducibility, and ease of use, making it ideal for development workflows.</p>
+<p>This documentation aims to provide in-depth coverage of UV's features and usage, reducing the need to consult the official docs unless advanced or niche details are required. It covers installation, basic workflows, CLI commands, concepts, and configuration.</p>
+<p>For more information or the latest updates, please see the official UV docs: [https://docs.astral.sh/uv/].</p>
+<h2 id="components">Components</h2>
 <ul>
-<li>General </li>
-<li>Usage </li>
-<li>UV Docs</li>
+<li>General: Covers installation, core concepts, and CLI overview.</li>
+<li>Usage: Examples of common workflows, including project management, scripts, and dependencies.</li>
+<li>Configuration: Settings and customization options.</li>
+<li>CLI Reference: Detailed command-line interface documentation.</li>
+<li>Advanced Topics: Integrations, best practices, and troubleshooting.</li>
 </ul>
-<h1 id="general">General</h1>
+<h2 id="general">General</h2>
+<h3 id="overview">Overview</h3>
+<p>UV streamlines Python development by handling package installation, dependency resolution, virtual environments, and project management in a unified tool. Key features include:</p>
+<ul>
+<li>Ultra-fast dependency resolution and installation (often 10-100x faster than pip).</li>
+<li>Automatic locking for reproducible environments via uv.lock.</li>
+<li>Project-based workflows with pyproject.toml for configuration.</li>
+<li>Support for scripts, workspaces, and advanced dependency groups.</li>
+<li>Compatibility with PEP standards like PEP 517/518 for builds.</li>
+</ul>
+<p>UV manages virtual environments automatically, creating them in .venv directories by default. It supports Python versions from 3.8+, and can download Pythons on-demand.</p>
 <h2 id="installation">Installation</h2>
-<p>macOS and Linux</p>
-<pre><code class="language-bash">  curl -LsSf https://astral.sh/uv/install.sh | sh
+<p>UV can be installed via multiple methods across platforms. The standalone installer is recommended for most users as it doesn't require Python pre-installed.
+macOS and Linux (Standalone Installer)</p>
+<h3 id="use-curl-to-download-and-install">Use curl to download and install:</h3>
+<pre><code class="language-bash">curl -LsSf https://astral.sh/uv/install.sh | sh
 </code></pre>
-<p>Windows</p>
-<pre><code class="language-bash">  powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+<h3 id="alternatively-with-wget">Alternatively, with wget:</h3>
+<pre><code class="language-bash">wget -qO- https://astral.sh/uv/install.sh | sh
 </code></pre>
-<h2 id="commands">Commands</h2>
+<p>For a specific version (e.g., 0.8.3):</p>
+<pre><code class="language-bash">curl -LsSf https://astral.sh/uv/0.8.3/install.sh | sh
+</code></pre>
+<p>Inspect the script first if desired:</p>
+<pre><code class="language-bash">curl -LsSf https://astral.sh/uv/install.sh | less
+</code></pre>
+<h3 id="windows-standalone-installer">Windows (Standalone Installer)</h3>
+<p>In PowerShell:</p>
+<pre><code class="language-powershell">powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+</code></pre>
+<p>For a specific version (e.g., 0.8.3):</p>
+<pre><code class="language-powershell">powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/0.8.3/install.ps1 | iex&quot;
+</code></pre>
+<p>Inspect the script:</p>
+<pre><code class="language-powershell">powershell -c &quot;irm https://astral.sh/uv/install.ps1 | more&quot;
+</code></pre>
+<h3 id="homebrew-macos">Homebrew (macOS)</h3>
+<pre><code class="language-bash">brew install uv
+</code></pre>
+<h3 id="winget-windows">WinGet (Windows)</h3>
+<pre><code class="language-powershell">winget install --id=astral-sh.uv -e
+</code></pre>
+<h3 id="scoop-windows">Scoop (Windows)</h3>
+<pre><code class="language-powershell">scoop install main/uv
+</code></pre>
+<h3 id="pypi-all-platforms-recommended-with-pipx">PyPI (All Platforms, Recommended with pipx)</h3>
+<p>Requires Python pre-installed. Use pipx for isolation:</p>
+<pre><code class="language-bash">pipx install uv
+</code></pre>
+<p>Or directly with pip (may require Rust for building):</p>
+<pre><code class="language-bash">pip install uv
+</code></pre>
+<h3 id="cargo-all-platforms">Cargo (All Platforms)</h3>
+<p>Build from source (requires Rust):</p>
+<pre><code class="language-bash">cargo install --git https://github.com/astral-sh/uv uv
+</code></pre>
+<h3 id="docker-all-platforms">Docker (All Platforms)</h3>
+<p>Use the official image: ghcr.io/astral-sh/uv. See integration guides for details.</p>
+<p>After installation, verify with uv --version. UV installs to ~/.cargo/bin by default on Unix-like systems; add it to your PATH if needed.</p>
+<h2 id="core-concepts">Core Concepts</h2>
+<h3 id="projects">Projects</h3>
+<p>UV projects manage multi-file Python codebases. A project is defined by a pyproject.toml file, which includes metadata, dependencies, and configuration. UV creates a virtual environment in .venv automatically.</p>
 <ul>
-<li><code>uv init [project name]</code> - Create a new project. If you include a name, it will create a new dir. 
-Otherwise, it will use the current working dir.</li>
-<li><code>uv add [package name]</code> - Start the live-reloading docs server.</li>
-<li><code>uv run [name]</code> - Build the documentation site.</li>
-<li><code>uv sync</code> - Print help message and exit.</li>
+<li>Structure: Root directory with pyproject.toml, source code (e.g., in src/), optional uv.lock for locked dependencies, and .venv/ for the environment.</li>
+<li>pyproject.toml: Uses [project] for metadata (name, version, etc.) and [tool.uv] for UV-specific settings. Dependencies are listed under [project.dependencies].</li>
+<li>Virtual Environments: Created on-demand in .venv. UV activates them automatically for commands like uv run.</li>
+<li>uv.lock: A lockfile for reproducible installs, generated by uv lock or implicitly during workflows.</li>
+<li>Scripts: Defined in [project.scripts] for entry points.</li>
+<li>Workflow: Init project → Add deps → Sync/lock → Run code.</li>
 </ul>
-<h1 id="usage">Usage</h1>
-<h1 id="uv-docs">UV Docs</h1>
-<p>Link: [https://docs.astral.sh/uv/]</p>
+<h3 id="dependencies">Dependencies</h3>
+<p>Dependencies are specified in pyproject.toml using PEP 621 format (e.g., requests = "^2.0"). UV resolves them against indexes like PyPI, locks versions in uv.lock, and installs into the environment.</p>
+<ul>
+<li>Specification: In [project.dependencies], [project.optional-dependencies], or dependency groups.</li>
+<li>Resolution: Uses a fast resolver considering constraints, platforms, and Python versions.</li>
+<li>Installation: Handles wheels, sdists, and caching for speed.</li>
+<li>Locking: uv lock creates/updates uv.lock for exact versions and hashes.</li>
+</ul>
+<h3 id="virtual-environments">Virtual Environments</h3>
+<p>UV manages venvs transparently:</p>
+<ul>
+<li>Created via uv venv or automatically in projects.</li>
+<li>Supports managed Pythons (downloads specific versions).</li>
+<li>Paths: Project venvs in .venv, global in ~/.local/uv/.</li>
+<li>Activation: Automatic in UV commands; manual via source .venv/bin/activate.</li>
+</ul>
+<h3 id="commands-overview">Commands Overview</h3>
+<p>UV's CLI is structured around subcommands. Use uv help for details. Common ones include:</p>
+<ul>
+<li>uv init [name]: Create a new project. Uses current dir if no name provided.</li>
+<li>uv add [packages]: Add dependencies to pyproject.toml and update the lockfile/environment.</li>
+<li>uv remove [packages]: Remove dependencies from pyproject.toml and update.</li>
+<li>uv sync: Install/update the environment to match pyproject.toml and uv.lock.</li>
+<li>uv lock: Update the lockfile without installing.</li>
+<li>uv run [command]: Run a command or script in the project environment.</li>
+<li>uv python [options]: Manage Python installations.</li>
+<li>uv pip [subcommand]: Pip-compatible interface for package management.</li>
+<li>uv venv [path]: Create a virtual environment.</li>
+<li>uv tool [subcommand]: Manage global tools/executables.</li>
+<li>uv cache [subcommand]: Manage the cache.</li>
+<li>uv build: Build wheels/sdists.</li>
+<li>uv publish: Upload to PyPI.</li>
+<li>uv export: Export requirements/lockfiles.</li>
+<li>uv tree: Display dependency tree.</li>
+<li>uv version: Show UV version.</li>
+<li>uv self [subcommand]: Manage UV itself (e.g., update).</li>
+</ul>
+<p>Many commands share global options like --cache-dir, --index-url, --verbose, --quiet, --color, etc.</p>
+<h3 id="usage">Usage</h3>
+<p>Basic Workflow for Projects</p>
+<h4 id="create-a-project">Create a Project:</h4>
+<pre><code class="language-bash">uv init myproject
+cd myproject
+</code></pre>
+<p>This creates pyproject.toml and .venv.</p>
+<h4 id="add-dependencies">Add Dependencies:</h4>
+<pre><code class="language-bash">uv add requests
+</code></pre>
+<p>Updates pyproject.toml, resolves/locks, and installs.</p>
+<h4 id="run-code-create-mainpy">Run Code: Create main.py:</h4>
+<pre><code class="language-python">import requests
+print(requests.get(&quot;https://example.com&quot;).text)
+</code></pre>
+<h4 id="run">Run:</h4>
+<pre><code class="language-bash">uv run python main.py
+</code></pre>
+<h4 id="or-directly-preferred-method">Or directly (preferred method):</h4>
+<pre><code class="language-bash">uv run main.py
+</code></pre>
+<h4 id="sync-environment">Sync Environment:</h4>
+<pre><code class="language-bash">uv sync
+</code></pre>
+<p>Ensures the venv matches the lockfile.</p>
+<h4 id="lock-dependencies">Lock Dependencies:</h4>
+<pre><code class="language-bash">uv lock
+</code></pre>
+<p>Updates uv.lock for reproducibility.</p>
+<h4 id="managing-scripts">Managing Scripts</h4>
+<p>UV excels at running single-file scripts with dependencies.</p>
+<p>Without Dependencies:</p>
+<pre><code class="language-bash">uv run script.py
+</code></pre>
+<p>With Dependencies:</p>
+<pre><code class="language-bash">uv run --with rich script.py
+</code></pre>
+<h4 id="inline-metadata-add-to-scriptpy">Inline Metadata: Add to script.py:</h4>
+<pre><code class="language-python"># /// script
+# dependencies = [&quot;requests&quot;]
+# ///
+import requests
+</code></pre>
+<p>Then: uv run script.py.</p>
+<h4 id="lock-script">Lock Script:</h4>
+<pre><code class="language-bash">uv lock --script script.py
+</code></pre>
+<p>Creates script.py.lock.</p>
+<h4 id="shebang-for-executables">Shebang for Executables:</h4>
+<pre><code class="language-python">
+    #!/usr/bin/env -S uv run
+    # /// script
+    # dependencies = [&quot;requests&quot;]
+    # ///
+    import requests
+</code></pre>
+<p>Make executable: chmod +x script.py, then ./script.py.</p>
+<h3 id="advanced-usage-examples">Advanced Usage Examples</h3>
+<p>Add Optional Dependencies:</p>
+<pre><code class="language-bash">uv add --optional test pytest
+uv sync --extra test
+</code></pre>
+<p>Dependency Groups: In pyproject.toml:</p>
+<pre><code class="language-toml">[dependency-groups]
+lint = [&quot;ruff&quot;]
+</code></pre>
+<p>Add: uv add --group lint ruff Sync: uv sync --group lint</p>
+<p>Upgrade Packages:</p>
+<pre><code class="language-bash">uv add --upgrade requests
+</code></pre>
+<p>Export Requirements:</p>
+<pre><code class="language-bash">uv export --format requirements-txt &gt; requirements.txt
+</code></pre>
+<p>Install from requirements.txt (Pip Compatibility):</p>
+<pre><code class="language-bash">uv pip install -r requirements.txt
+</code></pre>
+<p>Manage Pythons:</p>
+<pre><code class="language-bash">uv python install 3.12
+uv run --python 3.12 python --version
+</code></pre>
+<p>Global Tools:</p>
+<pre><code class="language-bash">uv tool install cowsay
+cowsay &quot;Hello UV!&quot;
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<p>UV can be configured via uv.toml (global or per-project), pyproject.toml ([tool.uv]), or environment variables. Key settings include:</p>
+<ul>
+<li>build-constraint-dependencies (list[str]): Constraints for build deps. Default: []. Example: build-constraint-dependencies = ["setuptools==60.0.0"]</li>
+<li>constraint-dependencies (list[str]): Version constraints. Default: []. Example: constraint-dependencies = ["grpcio&lt;1.65"]</li>
+<li>default-groups (str | list[str]): Groups installed by default. Default: ["dev"]. Example: default-groups = ["docs"]</li>
+<li>dev-dependencies (list[str]): Dev deps (legacy; use groups). Default: []. Example: dev-dependencies = ["ruff==0.5.0"]</li>
+<li>environments (str | list[str]): Supported platforms. Default: []. Example: environments = ["sys_platform == 'darwin'"]</li>
+<li>index (dict): Custom indexes. Example:</li>
+</ul>
+<pre><code class="language-toml">
+    [[tool.uv.index]]
+    name = &quot;pytorch&quot;
+    url = &quot;https://download.pytorch.org/whl/cu121&quot;
+</code></pre>
+<ul>
+<li>managed (bool): If UV manages the project. Default: true.</li>
+<li>override-dependencies (list[str]): Force versions. Default: []. Example: override-dependencies = ["werkzeug==2.3.0"]</li>
+<li>package (bool): Treat as package. Default: true.</li>
+</ul>
+<p>Environment variables like UV_CACHE_DIR, UV_INDEX_URL, UV_VERBOSE override settings.</p>
+<h2 id="cli-reference">CLI Reference</h2>
+<p>This section details all UV CLI commands, subcommands, and options based on the official reference.
+uv</p>
+<p>An extremely fast Python package manager.
+Usage: uv [OPTIONS] <COMMAND>
+Global Options (Shared Across Commands)</p>
+<pre><code>--allow-insecure-host &lt;HOST&gt;: Allow insecure hosts (multiple).
+--cache-dir &lt;DIR&gt;: Cache path.
+--color &lt;CHOICE&gt;: Color output (auto/always/never).
+--compile-bytecode: Compile to bytecode.
+--config-file &lt;FILE&gt;: Config file.
+--config-setting &lt;KEY=VALUE&gt;: Build settings (multiple).
+--default-index &lt;URL&gt;: Default index.
+--exclude-newer &lt;DATE&gt;: Limit packages by upload date.
+--extra-index-url &lt;URL&gt;: Extra indexes (deprecated).
+--find-links &lt;PATH/URL&gt;: Flat indexes.
+--index &lt;URL&gt;: Indexes (multiple).
+--index-strategy &lt;STRATEGY&gt;: Resolution strategy (first-index/unsafe-first-match/unsafe-best-match).
+--index-url &lt;URL&gt;: Main index (deprecated).
+--keyring-provider &lt;TYPE&gt;: Auth method (disabled/subprocess).
+--link-mode &lt;MODE&gt;: Install method (clone/copy/hardlink/symlink).
+--python-preference &lt;PREF&gt;: Python source (managed/system/only-managed/only-system).
+--quiet, -q: Reduce output.
+--refresh: Refresh cache.
+--resolution &lt;STRATEGY&gt;: Version selection (highest/lowest/lowest-direct).
+--upgrade, -U: Allow upgrades.
+--verbose, -v: Increase output.
+</code></pre>
+<p>uv add</p>
+<p>Add dependencies to the project.
+Usage: uv add [OPTIONS] <REQUIREMENTS>...</p>
+<p>Options:</p>
+<pre><code>--dev: Add as dev dependency (legacy).
+--editable: Install editable.
+--extra &lt;EXTRA&gt;: Add to extra.
+--frozen: No lock update.
+--group &lt;GROUP&gt;: Add to group.
+--locked: Assert lock unchanged.
+--optional &lt;OPTIONAL&gt;: Add to optional.
+--package &lt;PKG&gt;: For workspace member.
+--raw-sources: No normalization.
+--rev &lt;REV&gt;: Git revision.
+--script &lt;SCRIPT&gt;: Update script metadata.
+--tag &lt;TAG&gt;: Git tag. And global options.
+</code></pre>
+<p>uv remove</p>
+<p>Remove dependencies.
+Usage: uv remove [OPTIONS] <NAMES>...</p>
+<p>Options:</p>
+<pre><code>--dev: Remove from dev.
+--frozen: No lock update.
+--group &lt;GROUP&gt;: From group.
+--locked: Assert lock.
+--optional &lt;OPTIONAL&gt;: From optional.
+--package &lt;PKG&gt;: Workspace member.
+--script &lt;SCRIPT&gt;: Update script. And globals.
+</code></pre>
+<p>uv sync</p>
+<p>Sync environment with lockfile.
+Usage: uv sync [OPTIONS]</p>
+<p>Options:</p>
+<pre><code>--all-extras: Include all extras.
+--all-groups: All groups.
+--check: Check only.
+--dev: Include dev (legacy).
+--exact: Remove extras.
+--extra &lt;EXTRA&gt;: Specific extra.
+--frozen: No lock update.
+--group &lt;GROUP&gt;: Specific group.
+--locked: Assert lock.
+--no-dev: Exclude dev.
+--no-group &lt;GROUP&gt;: Exclude group.
+--no-install-project: Skip project install.
+--no-install-workspace: Skip workspace.
+--package &lt;PKG&gt;: Specific package. And globals.
+</code></pre>
+<p>uv lock</p>
+<p>Update lockfile.
+Usage: uv lock [OPTIONS]</p>
+<p>Options:</p>
+<pre><code>--all-packages: Lock workspace.
+--locked: Assert unchanged.
+--no-upgrade: Pin current.
+--package &lt;PKG&gt;: Specific.
+--upgrade-package &lt;PKG&gt;: Upgrade specific. And globals.
+</code></pre>
+<p>uv run</p>
+<p>Run command or script in environment.
+Usage: uv run [OPTIONS] [COMMAND]...</p>
+<p>Options:</p>
+<pre><code>--all-extras: All extras.
+--all-groups: All groups.
+--dev: Include dev.
+--extra &lt;EXTRA&gt;: Specific extra.
+--frozen: No lock update.
+--group &lt;GROUP&gt;: Specific group.
+--isolated: Isolated venv.
+--locked: Assert lock.
+--no-dev: Exclude dev.
+--no-group &lt;GROUP&gt;: Exclude group.
+--no-project: Skip project.
+--package &lt;PKG&gt;: Specific package.
+--with &lt;REQ&gt;: Ad-hoc dep.
+--with-requirements &lt;FILE&gt;: From file. And globals.
+</code></pre>
+<p>uv init</p>
+<p>Initialize project.
+Usage: uv init [OPTIONS] [PATH]</p>
+<p>Options:</p>
+<pre><code>--app: Include FastAPI template.
+--lib: Library template.
+--name &lt;NAME&gt;: Project name.
+--no-package: Virtual project.
+--no-pin-python: No Python pin.
+--no-readme: Skip README.
+--no-workspace: No workspace.
+--package: Package project.
+--python, -p &lt;VER&gt;: Python version.
+--script: Script mode. And globals.
+</code></pre>
+<p>uv export</p>
+<p>Export lockfile.
+Usage: uv export [OPTIONS]</p>
+<p>Options:</p>
+<pre><code>--all-extras: All extras.
+--all-packages: Workspace.
+--dev: Include dev.
+--extra &lt;EXTRA&gt;: Extra.
+--format &lt;FMT&gt;: Format (requirements-txt).
+--group &lt;GROUP&gt;: Group.
+--hashes: Include hashes.
+--locked: Assert lock.
+--no-dev: Exclude dev.
+--no-emit-build-requirement: Skip build reqs.
+--no-emit-find-links: Skip find-links.
+--no-emit-index-url: Skip index.
+--no-emit-marker: Skip markers.
+--no-emit-via: Skip install via.
+--no-group &lt;GROUP&gt;: Exclude group.
+--no-header: Skip header.
+--no-project: Skip project.
+--output-file, -o &lt;FILE&gt;: Output file.
+--package &lt;PKG&gt;: Specific. And globals.
+</code></pre>
+<p>uv tree</p>
+<p>Display dependency tree.
+Usage: uv tree [OPTIONS]</p>
+<p>Options:</p>
+<pre><code>--all-packages: Workspace.
+--depth &lt;DEPTH&gt;: Max depth.
+--locked: Assert lock.
+--no-dedupe: Show duplicates.
+--package &lt;PKG&gt;: Specific.
+--prune &lt;PKG&gt;: Prune package.
+--python-version &lt;VER&gt;: Filter by Python. And globals.
+</code></pre>
+<p>uv tool</p>
+<p>Manage global executables.
+Subcommands: install, list, run, dir, uninstall, update, update-shell.</p>
+<p>Example: uv tool install cowsay
+uv python</p>
+<p>Manage Python installations.
+Subcommands: find, install, list, dir, uninstall.</p>
+<p>Example: uv python install 3.12
+uv pip</p>
+<p>Pip-compatible commands.
+Subcommands: compile, install, uninstall, freeze, list, show, tree, sync.</p>
+<p>Example: uv pip install -r requirements.txt
+uv venv</p>
+<p>Create virtual environment.
+Usage: uv venv [OPTIONS] [PATH]</p>
+<p>Options:</p>
+<pre><code>--python, -p &lt;VER&gt;: Python version.
+--seed: Install seed packages. And globals.
+</code></pre>
+<p>uv build</p>
+<p>Build distributions.
+Usage: uv build [OPTIONS] [PATH]</p>
+<p>Subcommands: wheel, sdist.
+Options: --out-dir <DIR>, etc.
+uv publish</p>
+<p>Upload to index.
+Usage: uv publish [OPTIONS] <PATHS>...</p>
+<p>Options: --username <USER>, --password <PASS>, etc.
+uv cache</p>
+<p>Manage cache.
+Subcommands: clean, dir, prune, size.</p>
+<p>Example: uv cache clean
+uv self</p>
+<p>Manage UV.
+Subcommands: update.</p>
+<p>Example: uv self update
+uv version</p>
+<p>Show version.
+Usage: uv version [OPTIONS]</p>
+<p>Options: --short, etc.
+uv help</p>
+<p>Show help.
+Advanced Topics
+Integrations</p>
+<pre><code>Docker: Use UV in containers for reproducible builds.
+Git: Specify Git deps like uv add git+https://github.com/user/repo.git.
+Workspaces: Manage monorepos with root pyproject.toml and [tool.uv.workspace].
+Keyring: Enable for secure auth with --keyring-provider subprocess.
+</code></pre>
+<p>Best Practices</p>
+<pre><code>Commit pyproject.toml and uv.lock to version control.
+Use --locked in CI for reproducibility.
+Cache with --cache-dir for faster builds.
+For large projects, use --resolution lowest-direct for minimal versions.
+</code></pre>
+<p>Troubleshooting</p>
+<pre><code>Cache issues: uv cache clean.
+Python not found: Use uv python install.
+Conflicts: Check uv tree for dependency graph.
+Verbose logging: uv --verbose or RUST_LOG=debug.
+</code></pre>
               
             </div>
           </div><footer>

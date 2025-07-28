@@ -172,8 +172,12 @@
 <p><strong>Session/Conversation:</strong> A chat thread with history; switchable in the sidebar for multiple ongoing discussions.</p>
 <h2 id="accessing-the-application">Accessing the Application</h2>
 <ol>
-<li><strong>Open in Browser</strong>:</li>
-<li>Go to [http://10.0.0.21:8501] </li>
+<li>
+<p><strong>Open in Browser</strong>:</p>
+</li>
+<li>
+<p>Go to [http://10.0.0.21:8501] </p>
+</li>
 <li>The page title is "H&amp;H AI Assistant" with a robot icon (🤖).</li>
 <li>
 <p>If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).</p>
@@ -181,7 +185,9 @@
 <li>
 <p><strong>Troubleshooting Access</strong>:</p>
 </li>
-<li>Network: Make sure you are either connected to H&amp;H Secure, or H&amp;H Quality Wifi networks (or hardwired in to ethernet).</li>
+<li>
+<p>Network: Make sure you are either connected to H&amp;H Secure, or H&amp;H Quality Wifi networks (or hardwired in to ethernet).</p>
+</li>
 <li>Browser Cache: Clear cache or try incognito mode if UI issues occur.</li>
 </ol>
 <h2 id="signup-and-login">Signup and Login</h2>
@@ -224,16 +230,28 @@
 <h3 id="sidebar-controls">Sidebar Controls</h3>
 <ul>
 <li><strong>Header</strong>: "H&amp;H AI Assistant" with logo and logged-in email.</li>
-<li><strong>Mode Selector</strong>: Choose the query mode (dropdown: "general", "press_data", "websearch").</li>
-<li>General: For document-based queries (e.g., "Summarize the models.py file").</li>
+<li>
+<p><strong>Mode Selector</strong>: Choose the query mode (dropdown: "general", "press_data", "websearch").</p>
+</li>
+<li>
+<p>General: For document-based queries (e.g., "Summarize the models.py file").</p>
+</li>
 <li>Press Data: For machine data queries (e.g., "Average ActNozzleTemp for shots 100-200").</li>
-<li>Websearch: For internet-related queries (e.g., "Latest trends in injection molding").</li>
-<li><strong>Show COT Toggle</strong>: Checkbox to display Chain-of-Thought (COT) reasoning in responses (default: enabled). COT shows the agent's internal thinking process. This sometimes disconnects with tool calls/agent mode.</li>
+<li>
+<p>Websearch: For internet-related queries (e.g., "Latest trends in injection molding").</p>
+</li>
+<li>
+<p><strong>Show COT Toggle</strong>: Checkbox to display Chain-of-Thought (COT) reasoning in responses (default: enabled). COT shows the agent's internal thinking process. This sometimes disconnects with tool calls/agent mode.</p>
+</li>
 <li><strong>Conversation Selector</strong>: Dropdown to switch between chat sessions. Each shows title, ID, and timestamp (e.g., "New Chat (ID: uuid) - 2025-07-28T12:00:00").</li>
 <li><strong>New Chat Button</strong>: Starts a new session with a unique ID. Switches to it automatically.</li>
 <li><strong>Rename Current Chat</strong>: Text input to rename the active session (e.g., from "New Chat" to "Molding Trends"). Click "Rename" to save.</li>
-<li><strong>Help Section</strong>:</li>
-<li>"Ask about docs, press20 data, calculations, trends, defects."</li>
+<li>
+<p><strong>Help Section</strong>:</p>
+</li>
+<li>
+<p>"Ask about docs, press20 data, calculations, trends, defects."</p>
+</li>
 <li>Link to Docs: <a href="https://dawson-b23.github.io/HHDocs/">https://dawson-b23.github.io/HHDocs/</a></li>
 <li>Contact: intern@hhmoldsinc.com | 832-977-3004</li>
 </ul>
@@ -242,11 +260,19 @@
 <li><strong>Title</strong>: "H&amp;H AI Assistant" with a brief description: "Assist with injection molding: queries on Press20, docs, calculations, trends, defect fixes."</li>
 <li><strong>Chat History</strong>: Displays previous messages.</li>
 <li>User messages: In blue bubbles (e.g., your query).</li>
-<li>Assistant responses: In gray bubbles, showing:</li>
-<li><strong>Agent Mode</strong>: e.g., "General" or "Press Data". There is a bug where sometimes this will be "Unknown"</li>
+<li>
+<p>Assistant responses: In gray bubbles, showing:</p>
+</li>
+<li>
+<p><strong>Agent Mode</strong>: e.g., "General" or "Press Data". There is a bug where sometimes this will be "Unknown"</p>
+</li>
 <li><strong>COT</strong> (if enabled): The agent's reasoning (e.g., "Thinking: [steps]").</li>
-<li><strong>Model Response</strong>: The final answer.</li>
-<li><strong>Input Field</strong>: At the bottom—"Your question..." placeholder. Type your query and press Enter.</li>
+<li>
+<p><strong>Model Response</strong>: The final answer.</p>
+</li>
+<li>
+<p><strong>Input Field</strong>: At the bottom—"Your question..." placeholder. Type your query and press Enter.</p>
+</li>
 <li>Queries are processed based on the selected mode.</li>
 <li>First query in a "New Chat" auto-renames the session to a truncated version of the query (e.g., "how many failed shots..." becomes "how many failed shots"). You can rename this chat if needed.</li>
 <li><strong>Spinner</strong>: Shows "Processing..." during queries (may take seconds due to LLM inference).</li>
@@ -259,9 +285,16 @@
 <p>In this mode, you can ask general questions with a few having specific formats. It will answer based on whats in the knowledge base, if there is a gap, you can use a websearch. 
 You can ask "what is a [insert defect]," "what are causes of [insert defect]," and "how to troubleshoot/fix [insert defect]." Talk to this normally like you would any chatbot.</p>
 <ul>
-<li>Special Examples:</li>
+<li>
+<p>Examples:</p>
+</li>
 <li>
 <p>"List all documents": Lists titles, IDs, schemas.</p>
+</li>
+<li>"What is splay"</li>
+<li>"What are the causes of splay"</li>
+<li>
+<p>"How to fix splay" or "fix splay" or any variation of this.</p>
 </li>
 <li>
 <p>Responses use RAG: Searches ChromaDB, formats context, and generates answers.</p>
@@ -270,9 +303,15 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
 <h4 id="press-data-mode">Press Data Mode</h4>
 <ul>
 <li>For analyzing <code>press20_data</code> table (machine timestamps, temperatures, pressures, etc.).</li>
-<li>Natural language to SQL: e.g., "How many failed shots" → SQL like <code>SELECT COUNT(shot_num) FROM press20_data WHERE overallpassfail = 'FAIL'</code>.</li>
-<li>Examples:</li>
-<li>"Average actnozzletemp over shot_num 100 to 200".</li>
+<li>
+<p>Natural language to SQL: e.g., "How many failed shots" → SQL like <code>SELECT COUNT(shot_num) FROM press20_data WHERE overallpassfail = 'FAIL'</code>.</p>
+</li>
+<li>
+<p>Examples:</p>
+</li>
+<li>
+<p>"Average actnozzletemp over shot_num 100 to 200".</p>
+</li>
 <li>"Number of FAIL shots" (can specify for overallpassfail, bottompassfail, toppassfail for stopbox compacts)</li>
 <li>"Shots with bottomanomalylevel greater than 0.5".</li>
 <li>Outputs formatted data (e.g., key-value pairs per row).</li>
@@ -286,7 +325,9 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
 <li>
 <p>Examples:</p>
 </li>
-<li>"Defect fixes for injection molding".</li>
+<li>
+<p>"Defect fixes for injection molding".</p>
+</li>
 <li>Outputs: Aggregated summaries from top results.</li>
 </ul>
 <h3 id="chat-history-and-sessions">Chat History and Sessions</h3>
