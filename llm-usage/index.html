@@ -174,21 +174,19 @@
 <ol>
 <li>
 <p><strong>Open in Browser</strong>:</p>
-</li>
-<li>
-<p>Go to [http://10.0.0.21:8501] </p>
-</li>
+<ul>
+<li>Go to [http://10.0.0.21:8501] </li>
 <li>The page title is "H&amp;H AI Assistant" with a robot icon (🤖).</li>
-<li>
-<p>If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).</p>
+<li>If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).</li>
+</ul>
 </li>
 <li>
 <p><strong>Troubleshooting Access</strong>:</p>
-</li>
-<li>
-<p>Network: Make sure you are either connected to H&amp;H Secure, or H&amp;H Quality Wifi networks (or hardwired in to ethernet).</p>
-</li>
+<ul>
+<li>Network: Make sure you are either connected to H&amp;H Secure, or H&amp;H Quality Wifi networks (or hardwired in to ethernet).</li>
 <li>Browser Cache: Clear cache or try incognito mode if UI issues occur.</li>
+</ul>
+</li>
 </ol>
 <h2 id="signup-and-login">Signup and Login</h2>
 <p>The app uses Supabase for authentication (enabled when <code>DEPLOY = True</code> in <code>app.py</code>). Anonymous access is not supported in production mode.</p>
@@ -201,11 +199,11 @@
 <li>If successful, you'll see "Registered! Log in." </li>
 <li>
 <p>Troubleshooting:</p>
-</li>
-<li>
-<p>Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs </p>
-</li>
+<ul>
+<li>Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs </li>
 <li>Duplicate email: Use a unique email.</li>
+</ul>
+</li>
 </ol>
 <h3 id="login">Login</h3>
 <ol>
@@ -216,11 +214,11 @@
 <li>The sidebar will show "Logged in as: [email]" and the H&amp;H logo.</li>
 <li>
 <p>Troubleshooting:</p>
-</li>
-<li>
-<p>"Login failed": Verify credentials or reset password via Supabase dashboard if needed.</p>
-</li>
+<ul>
+<li>"Login failed": Verify credentials or reset password via Supabase dashboard if needed.</li>
 <li>Session persistence: The app uses Streamlit session state; closing the browser logs you out—re-login required.</li>
+</ul>
+</li>
 </ol>
 <h3 id="logout">Logout</h3>
 <ol>
@@ -240,13 +238,11 @@
 <li><strong>Header</strong>: "H&amp;H AI Assistant" with logo and logged-in email.</li>
 <li>
 <p><strong>Mode Selector</strong>: Choose the query mode (dropdown: "general", "press_data", "websearch").</p>
-</li>
-<li>
-<p>General: For document-based queries (e.g., "Summarize the models.py file").</p>
-</li>
+<ul>
+<li>General: For document-based queries (e.g., "Summarize the models.py file").</li>
 <li>Press Data: For machine data queries (e.g., "Average ActNozzleTemp for shots 100-200").</li>
-<li>
-<p>Websearch: For internet-related queries (e.g., "Latest trends in injection molding").</p>
+<li>Websearch: For internet-related queries (e.g., "Latest trends in injection molding").</li>
+</ul>
 </li>
 <li>
 <p><strong>Show COT Toggle</strong>: Checkbox to display Chain-of-Thought (COT) reasoning in responses (default: enabled). COT shows the agent's internal thinking process. This sometimes disconnects with tool calls/agent mode.</p>
@@ -256,12 +252,12 @@
 <li><strong>Rename Current Chat</strong>: Text input to rename the active session (e.g., from "New Chat" to "Molding Trends"). Click "Rename" to save.</li>
 <li>
 <p><strong>Help Section</strong>:</p>
-</li>
-<li>
-<p>"Ask about docs, press20 data, calculations, trends, defects."</p>
-</li>
+<ul>
+<li>"Ask about docs, press20 data, calculations, trends, defects."</li>
 <li>Link to Docs: <a href="https://dawson-b23.github.io/HHDocs/">https://dawson-b23.github.io/HHDocs/</a></li>
 <li>Contact: intern@hhmoldsinc.com | 832-977-3004</li>
+</ul>
+</li>
 </ul>
 <h3 id="main-chat-interface">Main Chat Interface</h3>
 <ul>
@@ -316,13 +312,13 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
 </li>
 <li>
 <p>Examples:</p>
-</li>
-<li>
-<p>"Average actnozzletemp over shot_num 100 to 200".</p>
-</li>
+<ul>
+<li>"Average actnozzletemp over shot_num 100 to 200".</li>
 <li>"Number of FAIL shots" (can specify for overallpassfail, bottompassfail, toppassfail for stopbox compacts)</li>
 <li>"Shots with bottomanomalylevel greater than 0.5".</li>
 <li>Outputs formatted data (e.g., key-value pairs per row).</li>
+</ul>
+</li>
 </ul>
 <h4 id="websearch-mode">Websearch Mode</h4>
 <ul>
@@ -332,11 +328,11 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
 </li>
 <li>
 <p>Examples:</p>
-</li>
-<li>
-<p>"Defect fixes for injection molding".</p>
-</li>
+<ul>
+<li>"Defect fixes for injection molding".</li>
 <li>Outputs: Aggregated summaries from top results.</li>
+</ul>
+</li>
 </ul>
 <h3 id="chat-history-and-sessions">Chat History and Sessions</h3>
 <ul>
