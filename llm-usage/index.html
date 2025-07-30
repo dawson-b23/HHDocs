@@ -48,6 +48,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#help">Help</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#definitions">Definitions</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#accessing-the-application">Accessing the Application</a>
@@ -161,6 +163,13 @@
 </ul>
 <p>The app integrates with services like Supabase for authentication and data storage, ChromaDB for vector search, Ollama for local LLM inference, and Langfuse for observability. It runs in a Dockerized environment for persistence and ease of deployment.</p>
 <p>This documentation covers access, authentication, and detailed usage. It assumes the application is deployed via Docker Compose as described in previous instructions.</p>
+<h2 id="help">Help</h2>
+<p>To get help for modes you can enter one of these queries into the general mode:
+  - general-mode.md
+  - press20-mode.md
+  - websearch-mode.md
+  - what-can-you-do.md</p>
+<p>Entering any of these into the chat (general mode) will make the model output contents it has saved regarding those services.</p>
 <h2 id="definitions">Definitions</h2>
 <p><strong>LLM (Large Language Model):</strong> An AI model trained on vast data to understand and generate human-like text, used here for natural language queries and responses.</p>
 <p><strong>RAG (Retrieval-Augmented Generation):</strong> A technique where the AI retrieves relevant documents from a knowledge base before generating a response, ensuring accurate and context-specific answers.</p>
@@ -297,8 +306,14 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
 </li>
 <li>"What is splay"</li>
 <li>"What are the causes of splay"</li>
+<li>"How to fix splay" or "fix splay" or any variation of this.</li>
 <li>
-<p>"How to fix splay" or "fix splay" or any variation of this.</p>
+<p>For help: Use these queries to find more information: </p>
+<ul>
+<li>"general-mode.md"</li>
+<li>"press20-mode.md"</li>
+<li>"websearch-mode.md"</li>
+</ul>
 </li>
 <li>
 <p>Responses use RAG: Searches ChromaDB, formats context, and generates answers.</p>
