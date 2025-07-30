@@ -36,9 +36,9 @@ This documentation covers access, authentication, and detailed usage. It assumes
 
 1. **Open in Browser**:
 
-    - Go to [http://10.0.0.21:8501] 
+    - Go to [LLM Website](http://10.0.0.21:8501) 
     - The page title is "H&H AI Assistant" with a robot icon (🤖).
-    - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase or Ollama).
+    - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase, chroma, or Ollama).
 
 2. **Troubleshooting Access**:
 
