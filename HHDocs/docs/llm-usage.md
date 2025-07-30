@@ -57,8 +57,9 @@ The app uses Supabase for authentication (enabled when `DEPLOY = True` in `app.p
 4. Click "Register".
 5. If successful, you'll see "Registered! Log in." 
 6. Troubleshooting:
-   - Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs 
-   - Duplicate email: Use a unique email.
+
+ - Error like "Sign-up failed": Tell Dawson and he will check email/password format or Supabase logs 
+ - Duplicate email: Use a unique email.
 
 ### Login
 
@@ -68,8 +69,9 @@ The app uses Supabase for authentication (enabled when `DEPLOY = True` in `app.p
 4. If successful, you'll see "Welcome back, [email]!" and be redirected to the main app interface.
 5. The sidebar will show "Logged in as: [email]" and the H&H logo.
 6. Troubleshooting:
-   - "Login failed": Verify credentials or reset password via Supabase dashboard if needed.
-   - Session persistence: The app uses Streamlit session state; closing the browser logs you out—re-login required.
+
+ - "Login failed": Verify credentials or reset password via Supabase dashboard if needed.
+ - Session persistence: The app uses Streamlit session state; closing the browser logs you out—re-login required.
 
 ### Logout
 
