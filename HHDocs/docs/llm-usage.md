@@ -14,6 +14,16 @@ The app integrates with services like Supabase for authentication and data stora
 
 This documentation covers access, authentication, and detailed usage. It assumes the application is deployed via Docker Compose as described in previous instructions.
 
+## Help 
+
+To get help for modes you can enter one of these queries into the general mode:
+  - general-mode.md
+  - press20-mode.md
+  - websearch-mode.md
+  - what-can-you-do.md
+  
+Entering any of these into the chat (general mode) will make the model output contents it has saved regarding those services.
+
 ## Definitions
 
 **LLM (Large Language Model):** An AI model trained on vast data to understand and generate human-like text, used here for natural language queries and responses.
@@ -137,6 +147,10 @@ You can ask "what is a [insert defect]," "what are causes of [insert defect]," a
   - "What is splay"
   - "What are the causes of splay"
   - "How to fix splay" or "fix splay" or any variation of this.
+  - For help: Use these queries to find more information: 
+      - "general-mode.md"
+      - "press20-mode.md"
+      - "websearch-mode.md"
 
 - Responses use RAG: Searches ChromaDB, formats context, and generates answers.
 
