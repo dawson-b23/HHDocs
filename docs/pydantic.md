@@ -1,9 +1,5 @@
-# Pydantic-AI
+# Pydantic (moved)
 
-This project uses Pydantic AI for building agents and structured prompts.
+This content has been moved to `docs/components/pydantic/index.md`.
 
-## Usage
-- Agents are defined using Pydantic models to ensure structured inputs/outputs.
-- See `pydantic-model/` in the repository for agent implementations and examples.
-
-<!-- Migrated from old_docs/HHDocs/docs/pydantic.md -->
+Open `docs/components/pydantic/index.md` for the full documentation.
