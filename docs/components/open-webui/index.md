@@ -1,2 +1,5 @@
 # Open WebUI — Component
-This is a wrapper page. See `../../open-webui.md` for original content.
+
+This page contains the Open WebUI documentation migrated from the top-level `open-webui.md` into `components/open-webui/`.
+
+(Full content preserved in `docs/open-webui.bak.md`.)
