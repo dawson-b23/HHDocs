@@ -1,0 +1,18 @@
+site_name: HHDocs
+nav:
+  - Home: index.md
+  ## LLM components
+  - LLM-usage: llm-usage.md
+  - LLM-architecture: llm-arch.md
+  - Supabase: supabase.md
+  - Data: data.md
+  - n8n: n8n.md
+  - Pydantic: pydantic.md
+  ## Other relevant componenets
+  - Camera: camera.md
+  - Rpi: rpi.md
+  - UV: uv.md
+  - About: about.md
+theme: readthedocs
+site_description: Documentation for all projects worked on by Intern (Dawson) for H&H Molds Inc.
+site_author: Dawson Burgess
