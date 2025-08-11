@@ -161,4 +161,7 @@ node_modules/
 # Docsify artifacts
 docs/.vuepress/
 
+# Allow vendored docsify files (we'll track docs/lib)
+!docs/lib/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
