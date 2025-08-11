@@ -1,0 +1,4 @@
+/* Custom tweaks to ensure Docsify sidebar is left and GitHub corner small */
+.sidebar-toggle{display:none}
+.app-name-link img{height:28px}
+.github-corner{width:40px;height:40px;opacity:0.9}
