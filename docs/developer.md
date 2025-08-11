@@ -18,14 +18,27 @@ This page contains notes for developers onboarding to the project and direct lin
 - `scripts/check_services.sh`: simple health check script (curl endpoints + `docker ps`).
 
 ## Running locally
-1. Copy environment: `cp local-ai-copy/.env.example local-ai-copy/.env` and fill required values.
-2. Start services (profile depends on GPU):
-   - `python local-ai-copy/start_services.py --profile cpu`
-   - `python local-ai-copy/start_services.py --profile gpu-nvidia`
-3. Check containers: `docker ps` and `docker logs <container>`.
+- Copy environment: `cp local-ai-copy/.env.example local-ai-copy/.env` and fill required values. See the `.env.example` for required keys and recommended defaults.
+
+- Start services using the orchestrator script. The project supports two environment modes (`private` and `public`) and multiple profiles for GPU support. Examples:
+  - CPU (default): `python local-ai-copy/start_services.py --environment private`
+  - Nvidia GPU: `python local-ai-copy/start_services.py --environment private` (the script will use the GPU-aware compose overrides if configured in your `docker-compose` and env)
+  - Public deployment (locks down ports): `python local-ai-copy/start_services.py --environment public`
+
+- The `start_services.py` script performs these steps:
+  - Copies the root `.env` into `supabase/docker/.env` so Supabase picks up the same variables.
+  - Stops any existing `localai` compose project (runs `docker compose -p localai -f docker-compose.yml down`).
+  - Brings up Supabase first with `supabase/docker/docker-compose.yml` (plus a public override file when `--environment public` is used).
+  - Waits briefly for Supabase, then brings up the local AI stack via `docker-compose.yml` (and applies `docker-compose.override.private.yml` or `docker-compose.override.public.yml` depending on the environment).
+
+- Check containers and logs:
+  - `docker compose -p localai ps`
+  - `docker compose -p localai logs -f <service>`
+  - `docker logs <container>` (for individual containers)
 
 ## Development tips
-- When debugging agent code, look in `local-ai-copy/logs` and n8n workflow logs.
-- For quick experiments, import `Local_RAG_AI_Agent_n8n_Workflow.json` into n8n via the UI at `http://localhost:5678`.
+- Debug locations: check `local-ai-copy/logs`, `supabase/docker/volumes/*/logs`, and `neo4j` data/log folders for persistent state.
+- Import workflow: open n8n at `http://localhost:5678` and import `local-ai-copy/Local_RAG_AI_Agent_n8n_Workflow.json` for the example RAG workflow.
+- Open WebUI integration: add `local-ai-copy/n8n_pipe.py` as a Function in Open WebUI (Workspace → Functions → Add Function) and set its `n8n_url` to your workflow webhook URL.
 
 <!-- Added links to key files in local-ai-copy -->
