@@ -1,0 +1,5 @@
+/* Minimal Catppuccin Mocha Mauve theme placeholder */
+:root{--bg:#1e1e2e;--text:#c7c7d7;--accent:#f5bde6}
+body{background:var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+/* Sidebar styles */
+.sidebar{background:#11111a}

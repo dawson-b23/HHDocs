@@ -1,0 +1,4 @@
+/* Basic docsify theme shim to approximate vue theme */
+body { margin: 0; padding: 0; }
+#navbar, .sidebar { background: #1e1e2e; color: #c7c7d7 }
+.content { padding: 1.5rem }
