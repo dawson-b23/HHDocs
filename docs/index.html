@@ -22,7 +22,12 @@
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.12.1/lib/docsify.min.js"></script>
+  <script>
+    // Ensure sidebar filename is correct for GitHub Pages
+    window.$docsify = window.$docsify || {};
+    window.$docsify.loadSidebar = true;
+  </script>
 </body>
 
 </html>
