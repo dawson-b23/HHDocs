@@ -154,7 +154,6 @@ cython_debug/
 
 # Local AI copy - workspace and data (do not commit)
 local-ai-copy/
-Work/
 
 # Node
 node_modules/
