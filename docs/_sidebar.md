@@ -18,6 +18,7 @@
   * [SearXNG](components/searxng/index.md)
   * [Langfuse](components/langfuse/index.md)
 * [Guides](#guides)
+  * [0 to Hero](guides/starting-up-0-100.md)
   * [Ingestion](ingestion.md)
   * [Developer](developer.md)
   * [Troubleshooting](troubleshooting.md)

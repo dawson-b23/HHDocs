@@ -1,10 +1,5 @@
 # n8n — Component
 
-This page contains the n8n documentation migrated from the top-level `n8n.md` into `components/n8n/`.
-
----
-
-(Original content moved from `docs/n8n.md`)
 
 # n8n — Beginner's Guide and Integration Notes
 

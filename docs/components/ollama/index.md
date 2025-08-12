@@ -1,10 +1,5 @@
 # Ollama — Component
 
-This file contains the Ollama documentation moved from the top-level `ollama.md` into `components/ollama/index.md`.
-
----
-
-(Original content moved from `docs/ollama.md`)
 
 # Ollama — Local Model Runtime (Beginner's Guide)
 

@@ -2,10 +2,14 @@
 
 This page contains notes for developers onboarding to the project and direct links to key files.
 
+---
+
 ## Repo layout
 - `local-ai-copy/`: core application and services (Streamlit, agents, ingestion, Docker configs)
 - `pydantic-model/` (if present): agent definitions and examples
 - `docs/`: user-facing documentation served by Docsify
+
+---
 
 ## Key files and where to look
 - `local-ai-copy/start_services.py`: orchestrator script to start the full stack (Supabase + local AI services).
@@ -16,6 +20,8 @@ This page contains notes for developers onboarding to the project and direct lin
 - `local-ai-copy/Local_RAG_AI_Agent_n8n_Workflow.json`: n8n workflow JSON to import into n8n.
 - `local-ai-copy/supabase/docker/docker-compose.yml`: local supabase configuration and initialization SQL files.
 - `scripts/check_services.sh`: simple health check script (curl endpoints + `docker ps`).
+
+---
 
 ## Running locally
 - Copy environment: `cp local-ai-copy/.env.example local-ai-copy/.env` and fill required values. See the `.env.example` for required keys and recommended defaults.
@@ -35,6 +41,8 @@ This page contains notes for developers onboarding to the project and direct lin
   - `docker compose -p localai ps`
   - `docker compose -p localai logs -f <service>`
   - `docker logs <container>` (for individual containers)
+
+---
 
 ## Development tips
 - Debug locations: check `local-ai-copy/logs`, `supabase/docker/volumes/*/logs`, and `neo4j` data/log folders for persistent state.

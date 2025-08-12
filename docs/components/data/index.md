@@ -1,11 +1,5 @@
 # Data — Component
 
-This page contains the data documentation migrated from the top-level `data.md` into `components/data/`.
-
----
-
-(Original content moved from `docs/data.md`)
-
 ## Data
 
 This page documents data sources, collection, processing, and storage for the H&H Local AI Project.

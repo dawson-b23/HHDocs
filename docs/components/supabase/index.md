@@ -1,11 +1,3 @@
-# Supabase — Component
-
-This page contains the Supabase documentation migrated from the top-level `supabase.md` into `components/supabase/`.
-
----
-
-(Original content moved from `docs/supabase.md`)
-
 # Supabase — Local Hosting Guide
 
 This page explains how Supabase is used in the Local AI starter kit, how to configure it locally, and common maintenance tasks. The target reader has no prior Supabase experience — the instructions are step-by-step and include troubleshooting hints.

@@ -1,11 +1,5 @@
 # Qdrant — Component
 
-This page contains the Qdrant documentation migrated from the top-level `qdrant.md` into `components/qdrant/`.
-
----
-
-(Original content moved from `docs/qdrant.md`)
-
 ## Qdrant — Vector Store Notes
 
 Qdrant is an optional, high-performance vector database included in the starter kit. Use Qdrant for large-scale nearest neighbor searches when Supabase's vector support is not sufficient.

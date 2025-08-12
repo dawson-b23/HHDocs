@@ -2,14 +2,20 @@
 
 This page documents production deployment recommendations, TLS/Caddy setup, DNS, and firewall (UFW) notes.
 
+---
+
 ## Overview
 The stack is designed to run behind a reverse proxy (Caddy) that terminates TLS and forwards traffic to internal services. Use `docker-compose` profiles and ensure secrets are set in `.env` before starting.
+
+---
 
 ## Recommended architecture
 - Host machine: Ubuntu LTS (20.04/22.04) or similar with Docker and docker-compose installed.
 - Reverse proxy: Caddy running in Docker to manage TLS via Let's Encrypt (or internal CA).
 - Services: Supabase (Postgres), n8n, Ollama, Open WebUI, Qdrant/Chroma, Neo4j.
 - Network: internal Docker network for inter-service communication; only expose ports 80/443 publicly.
+
+---
 
 ## TLS and Caddy
 - Configure `Caddyfile` with your hostnames (examples in `local-ai-copy/Caddyfile`).
@@ -24,9 +30,13 @@ n8n.yourdomain.com {
 
 - For production ensure you have valid A records pointing your subdomains to the host IP and `LET’SENCRYPT_EMAIL` set in `.env`.
 
+---
+
 ## DNS
 - Set A records for each service subdomain (n8n, supabase, ollama, openwebui, searxng).
 - If using a single host, Caddy will route by hostname to the correct container.
+
+---
 
 ## UFW and firewall
 - Recommended UFW rules on the host:
@@ -35,9 +45,13 @@ n8n.yourdomain.com {
   - `ufw enable`
 - Note: Docker manipulates iptables, so ensure traffic flows through Caddy and avoid exposing service ports directly when public.
 
+---
+
 ## Backups & persistence
 - Ensure volumes for Postgres and Neo4j are persisted and regularly backed up.
 - Example Postgres dump: `pg_dump -h localhost -U postgres -Fc -f /backup/db-$(date +%F).dump`
+
+---
 
 ## Scaling notes
 - Ollama and model hosting require GPU and host tuning; prefer dedicated host for model serving.

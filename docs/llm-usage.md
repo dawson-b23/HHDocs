@@ -14,6 +14,8 @@ The app integrates with services like Supabase for authentication and data stora
 
 This documentation covers access, authentication, and detailed usage. It assumes the application is deployed via Docker Compose as described in previous instructions.
 
+---
+
 ## Help 
 
 To get help for modes you can enter one of these queries into the general mode:
@@ -25,6 +27,8 @@ To get help for modes you can enter one of these queries into the general mode:
 Entering any of these into the chat (general mode) will make the model output contents it has saved regarding those services.
 
 Definitions and detailed usage are included here.
+
+---
 
 ## Accessing the Application
 
@@ -38,6 +42,8 @@ Definitions and detailed usage are included here.
 
     - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
     - Browser Cache: Clear cache or try incognito mode if UI issues occur.
+
+---
 
 ## Signup and Login
 
@@ -63,6 +69,8 @@ The app uses Supabase for authentication (enabled when `DEPLOY = True` in `app.p
 1. In the sidebar, click "Logout".
 2. You'll be redirected to the login screen, and session data is cleared.
 
+---
+
 ## Using the Application
 
 Once logged in, the interface consists of a sidebar for controls and a main chat area for interactions.
@@ -77,6 +85,8 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 - **Title**: "H&H AI Assistant" with a brief description: "Assist with injection molding: queries on Press20, docs, calculations, trends, defect fixes."
 - **Chat History**: Displays previous messages.
 - **Input Field**: At the bottom—"Your question..." placeholder. Type your query and press Enter.
+
+---
 
 ## Troubleshooting
 

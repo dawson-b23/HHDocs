@@ -2,8 +2,12 @@
 
 Documentation for data and document ingestion pipelines.
 
+---
+
 ## Overview
 Ingestion collects telemetry and documents from edge devices and pushes normalized records to Supabase and embeddings to Chroma.
+
+---
 
 ## Steps
 1. Edge capture (Raspberry Pi) saves CSV/JSON and image files.
@@ -11,6 +15,8 @@ Ingestion collects telemetry and documents from edge devices and pushes normaliz
 3. Normalization script (`ingest.py`) cleans data and generates metadata.
 4. Insert into Supabase using service API keys.
 5. Generate embeddings and upsert into Chroma vector store.
+
+---
 
 ## Tips
 - Run ingestion in a virtualenv matching `pydantic-model/requirements.txt`.

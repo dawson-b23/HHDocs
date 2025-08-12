@@ -1,11 +1,5 @@
 # Camera — Component
 
-This page contains the camera documentation migrated from the top-level `camera.md` into the `components/camera/` folder.
-
----
-
-(Original content moved from `docs/camera.md`)
-
 ## Camera
 
 This page documents camera hardware and software used in the project.
