@@ -61,7 +61,7 @@ def validate_rows(df: pd.DataFrame) -> pd.DataFrame:
         try:
             validated = Press20Row(**data)
             valid_rows.append(validated.dict())
-        except Exception as e:
+        except Exception:
             errors += 1
             # For brevity, we skip printing every error.
     print(f"Validated {len(valid_rows)} rows, {errors} invalid rows")
