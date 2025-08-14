@@ -76,7 +76,13 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 ### Sidebar Controls
 
 - **Header**: "H&H AI Assistant" with logo and logged-in email.
-- **Mode Selector**: Choose the query mode (dropdown: "general", "press_data", "websearch").
+- **Logout Button**: Logout of the app.
+- **Mode Selector**: Choose the query mode (dropdown: "RAG", "websearch", "logging").
+- **Show COT**: Toggles the Chain of Thought (CoT) display on and off. This is a feature that allows the LLM to provide additional context to how it's solving the user's query. For simple operations, there may be no output.
+- **Select Conversation**: Choose the conversation to load from you chat histories. This works exactly as it does in apps like ChatGPT.
+- **New Chat/Delete Chat**: Start a new chat or delete the current chat.
+- **Rename Chat**: Rename the current chat.
+- **Help dropdown**: Displays a list of help topics.
 
 ### Main Chat Interface
 
@@ -88,8 +94,8 @@ Once logged in, the interface consists of a sidebar for controls and a main chat
 
 ## Troubleshooting
 
-- **App Not Starting**: Check Docker logs; ensure env vars are set correctly.
+- **App Not Starting**: Check Docker logs; ensure env vars are set correctly. Contact whoever is in charge of the app.
 - **Auth Issues**: Verify Supabase is running and keys match.
-- **Query Failures**: If LLM errors, check Ollama service. For ChromaDB, ensure data is ingested.
+- **Query Failures**: If LLM errors, check Ollama service. For ChromaDB, ensure data is ingested and ChromaDB didn't crash.
 
 For support, contact intern@hhmoldsinc.com or check the linked docs. This app is for internal H&H use— please report bugs promptly.
