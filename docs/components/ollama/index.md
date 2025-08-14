@@ -26,3 +26,63 @@ Ollama runs local LLMs inside Docker and serves them on `http://ollama:11434` in
 
 - If models fail to download, check container logs and available disk space.
 - If inference is slow, verify GPU access and that the container is attached to the GPU runtime.
+
+## Model considerations
+
+### Model configuration
+
+I recommend not changing any of the settings in the docker-compose.yml file. The defaults are optimized for performance and stability. If you switch to a model that is not gpt-oss, you can 
+un-comment the [insert names here], which will speed up the models that aren't gpt (this is because of gpt's custom new quant - HMPK4). 
+
+You can look at the model parameters for a given model by running:
+
+```bash
+docker exec -it ollama /bin/bash
+```
+
+```bash
+ollama list 
+```
+
+```bash
+ollama show gpt-oss:20b
+```
+
+```bash
+ollama show gpt-oss:20b --modelfile
+```
+
+This will show you the model parameters, and you can change them if you want to. This will work for all models, not just gpt-oss. Next we will cover changing parameters, and some of the ones I changed.
+
+```bash
+ollama run gpt-oss:20b 
+```
+
+```bash
+/set parameter num_ctx 65536
+```
+
+```bash
+/save gpt-oss:20b-64k
+```
+
+### Model parameters
+
+The following are the parameters I changed for gpt-3.5-turbo.
+
+
+### Model download
+
+Models are stored in the container at `/models`.
+
+### Model size
+
+Models are stored in the container at `/models`. The Ollama container is configured to use the `nvidia` runtime, which requires GPU access.
+
+### Model format
+
+Models are stored in the `.bin` format. The Ollama container is configured to use the `nvidia` runtime, which requires GPU access.
+
+### Model license
+
+Models are stored in the container at `/models`.

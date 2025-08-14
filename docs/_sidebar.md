@@ -26,4 +26,8 @@
   * [Glossary](guides/glossary.md)
 * [References](#references)
    * [Local AI Directory](references/local-ai.md)
+   * [Other Work](references/other-work.md)
    * [Other Projects](references/other-projects.md)
+   * [Future Work](references/future-work.md)
+   * [Upgrade path](references/upgrade-path.md)
+   

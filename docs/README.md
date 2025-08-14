@@ -3,6 +3,25 @@
 Welcome to the H&H Local AI documentation. This site is built with [Docsify](https://docsify.js.org/#/), a static site generator that uses Markdown files to create a website.
 
 ---
+## Dependencies
+The site is built using the following dependencies:
+
+**npm (node package manager)**
+[Link to install instructions npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). But if you want the TLDR:
+
+- You can install npm directly, or get the nvm (node version manager) tool to install npm.
+
+For linux:
+- Install nvim. See their [github page](https://github.com/nvm-sh/nvm) for more info.
+- Or you can just install npm directly. `sudo apt install npm`
+
+For Windows
+- Install nvim. see their [github page](https://github.com/coreybutler/nvm-windows) for more info.
+- Or you can just install npm directly. You will have to look up how to install npm on windows (I don't know how and I don't use Windows)
+
+Whatever method you end up using, make sure you have the latest version of npm installed. After that, you will need to run the command `npm install docsify -g`
+
+--- 
 
 ## How to use this site
 The site is organized into pages and folders:
@@ -21,10 +40,10 @@ to GitHub Pages, run `docsify gh-deploy` from the root directory of the reposito
 
 ---
 
-## How to edit this site
+## How to build or edit this site
 To edit the site, you can use any text editor or IDE that supports Markdown. The site is built using Docsify, which uses Markdown files to create the pages.
 
-If you want to preview the site locally, you can use the `docsify serve` command to start a local server that serves the site at [localhost:3000](http://localhost:3000). It will live update as you make changes to the code/md files.
+If you want to build and preview the site locally, you can use the `docsify serve docs` command to start a local server that serves the site at [localhost:3000](http://localhost:3000). It will live update as you make changes to the code/md files.
 
 ---
 
@@ -50,7 +69,7 @@ if you add a lot of pages.
 ---
 
 ## How to edit pages
-To edit a page, you can open the Markdown file in a text editor or IDE that supports Markdown. You can also use a Markdown editor like [Obsidian](https://obsidian.md/), [Typora](https://typora.io/), or [VS Code](https://code.visualstudio.com/) with the *Markdown Preview Enhanced*.    
+To edit a page, you can open the Markdown file in a text editor or IDE that supports Markdown. You can also use a Markdown editor like [Obsidian](https://obsidian.md/), [Typora](https://typora.io/), [VS Code](https://code.visualstudio.com/), or [Neovim](https://github.com/neovim/neovim) with the *Markdown Preview Enhanced*.    
 
 
 If you run the repository locally and open `docs/index.html` in a browser, Docsify will render the sidebar and pages.

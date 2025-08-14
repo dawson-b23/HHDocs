@@ -6,25 +6,21 @@
 
 The H&H AI Assistant is a web-based application built with Streamlit and Pydantic, designed to assist with injection molding queries. It supports multiple modes for handling different types of questions:
 
-- **General Mode**: Uses Retrieval-Augmented Generation (RAG) to query and summarize documents, including listing documents, fetching file contents, and running SQL queries on tabular data.
-- **Press Data Mode**: Queries the `press20_data` table using natural language to SQL conversion, allowing analysis of machine data like shot numbers, temperatures, pressures, and pass/fail statuses.
+- **RAG Mode**: Previously known as "general mode". Uses Retrieval-Augmented Generation (RAG) to query and summarize documents, including listing documents, fetching file contents, and running SQL queries on tabular data.
 - **Websearch Mode**: Performs web searches, crawls pages, and summarizes content relevant to the query.
-
-The app integrates with services like Supabase for authentication and data storage, ChromaDB for vector search, Ollama for local LLM inference, and Langfuse for observability. It runs in a Dockerized environment for persistence and ease of deployment.
-
-This documentation covers access, authentication, and detailed usage. It assumes the application is deployed via Docker Compose as described in previous instructions.
+- **Logging Mode**: Allows setup techs to log changes to various parts and presses. Setup techs can then query the data using natrual language.
 
 ---
 
 ## Help 
 
 To get help for modes you can enter one of these queries into the general mode:
-  - general-mode.md
-  - press20-mode.md
-  - websearch-mode.md
-  - what-can-you-do.md
+  - `general-mode.md`
+  - `websearch-mode.md`
+  - `what-can-you-do.md`
   
-Entering any of these into the chat (general mode) will make the model output contents it has saved regarding those services.
+
+Entering any of these into the chat (RAG mode) will make the model output contents it has saved regarding those services.
 
 Definitions and detailed usage are included here.
 
@@ -34,14 +30,16 @@ Definitions and detailed usage are included here.
 
 1. **Open in Browser**:
 
-    - Go to [LLM Website](http://10.0.0.21:8501) 
-    - The page title is "H&H AI Assistant" with a robot icon (🤖).
-    - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase, chroma, or Ollama).
+  - Go to [LLM Website](http://10.0.0.76:8501) 
+  - The page title is "H&H AI Assistant" with a robot icon (🤖).
+  - If the app doesn't load, tell Dawson or whoever is in chareg of the app and check Docker logs for errors (e.g., connection issues to Supabase, chroma, or Ollama).
 
 2. **Troubleshooting Access**:
 
-    - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
-    - Browser Cache: Clear cache or try incognito mode if UI issues occur.
+  - Network: Make sure you are either connected to H&H Secure, or H&H Quality Wifi networks (or hardwired in to ethernet).
+  - Browser Cache: Clear cache or try incognito mode if UI issues occur.
+  - OOM: If you get an out of memory error, let Dawson or whoever is in charge of the app know. You likely have too much stored memory in a chat, and need it cleared out. 
+  - Gary, see the troubleshooting section of the docs to resolve an error like this.
 
 ---
 
